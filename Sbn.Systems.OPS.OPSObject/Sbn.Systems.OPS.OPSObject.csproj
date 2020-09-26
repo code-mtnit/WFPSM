@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{902DBC27-BD68-4A7B-977E-D98288575A1A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sbn.Systems.OPS.OPSObject</RootNamespace>
+    <AssemblyName>Sbn.Systems.OPS.OPSObject</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.MSXML2, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Sbn.Libs.XMLPareser\bin\Debug\Interop.MSXML2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address.cs" />
+    <Compile Include="Addresses.cs" />
+    <Compile Include="CountryDivision.cs" />
+    <Compile Include="CountryDivisions.cs" />
+    <Compile Include="MFOrgPosition.cs" />
+    <Compile Include="MFOrgPositions.cs" />
+    <Compile Include="MFOrgUnit.cs" />
+    <Compile Include="MFOrgUnits.cs" />
+    <Compile Include="MFPerson.cs" />
+    <Compile Include="MFPersons.cs" />
+    <Compile Include="OrgUnitAddress.cs" />
+    <Compile Include="OrgUnitAddresses.cs" />
+    <Compile Include="Personnel.cs" />
+    <Compile Include="PersonnelInterdict.cs" />
+    <Compile Include="PersonnelInterdicts.cs" />
+    <Compile Include="Personnels.cs" />
+    <Compile Include="PersonPicture.cs" />
+    <Compile Include="PersonPictures.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Telephone.cs" />
+    <Compile Include="Telephones.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sbn.Controls.Imaging.ImagingObject\Sbn.Controls.Imaging.ImagingObject.csproj">
+      <Project>{fc9855d8-d807-4663-9281-a58f91bac642}</Project>
+      <Name>Sbn.Controls.Imaging.ImagingObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Libs.AssemblyTools\Sbn.Libs.AssemblyTools\Sbn.Libs.AssemblyTools.csproj">
+      <Project>{95ec7caa-0c9f-497e-9779-687b0deff64d}</Project>
+      <Name>Sbn.Libs.AssemblyTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Libs.XMLPareser\Sbn.Libs.XMLPareser.csproj">
+      <Project>{04f4ea2f-4d90-4726-ade0-854a63dfe904}</Project>
+      <Name>Sbn.Libs.XMLPareser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Systems.WMC.WMCObject\Sbn.Systems.WMC.WMCObject.csproj">
+      <Project>{47302fdd-8529-44cf-95d8-8b5259040eca}</Project>
+      <Name>Sbn.Systems.WMC.WMCObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBNCore\SBNCore\SBNCore.csproj">
+      <Project>{121361c1-78a9-43e9-83fa-43d3439b198f}</Project>
+      <Name>SBNCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

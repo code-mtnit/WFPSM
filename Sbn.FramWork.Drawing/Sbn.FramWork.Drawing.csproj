@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{78BCB00A-3190-45DC-A89C-5F1C71F3FBA2}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Sbn.FramWork.Drawing</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WPF4">
+      <HintPath>..\..\lib\GalaSoft.MvvmLight.Extras.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WPF4">
+      <HintPath>..\..\lib\GalaSoft.MvvmLight.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Core.Converters\BitmapConverter.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Core.Converters\ColorConverter.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Core.Utilities\Clipboard.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Core.Utilities\History.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Drawing.TypeConverters\Resource1.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Serialization\DataMember.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Serialization\Resource.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Serialization\SerializableData.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Serialization\SerializableDataComposer.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Serialization\SerializableDataController.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Serialization\SerializableDataDecomposer.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Serialization\Serializer.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Serialization\XmlClassSerializable.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Serialization\XmlFieldSerializable.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Serialization\XmlSerializable.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Serialization\XmlSerializationException.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Serialization\XmlSerializeReader.cs" />
+    <Compile Include="Sbn.FramWork.Drawing.Serialization\XmlSerializeWriter.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\ActivePenHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\Appearance.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\AppearanceHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\AppearanceTypeConverter.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\BackgroundColor1Handler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\BackgroundColor2Handler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\BorderColorHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\BorderWidthHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\CompositeShape.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\CompositeTransformer.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\CustomShape.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\DeformHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\Ghost.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\GhostAppearance.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\GrabberDimensionHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\GradientAngleHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\GridManager.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\GridManagerTypeConverter.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\HitPositions.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\HorizontalVersors.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\IActions.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\IDocument.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\IShape.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\LineAppearance.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\MarkerColorHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\MarkerDimensionHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\MirrorHorizontalHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\MirrorVerticalHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\MouseClickOnShape.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\MouseDoubleClickOnShape.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\MouseDownOnShape.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\MouseMoveOnShape.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\MouseUpOnShape.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\MouseWheel.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\MovementHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\PaintOnShape.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\PointFTypeConverter.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\PolygonAppearance.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\RotateHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\ScaleHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\Select.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\Shape.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\ShapeChangingHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\ShapeCollection.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\ShapeCollectionEx.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\SizeFTypeConverter.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\Tool.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\Transformer.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\TranslateHandler.cs" />
+    <Compile Include="Sbn.FramWork.Drawing\VerticalVersors.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sbn.FramWork.Drawing.Drawing.TypeConverters\Resource1.resx" />
+    <EmbeddedResource Include="Sbn.FramWork.Drawing.Serialization\Resource.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseClass\BaseClass\BaseClass.csproj">
+      <Project>{3c1452af-f8ef-49e6-ad21-4f4c443b471e}</Project>
+      <Name>BaseClass</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

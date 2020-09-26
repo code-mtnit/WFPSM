@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE53055C-2EAC-4A86-98A9-333E3B72A1F4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sbn.AdvancedControls.Imaging.SbnPaint</RootNamespace>
+    <AssemblyName>Imaging.SbnPaint</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ColorPicker">
+      <HintPath>..\..\lib\ColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Ink, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Sayban\References\Tablet PC\Microsoft.Ink.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Ink.resources, Version=6.1.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Sayban\References\Tablet PC\Microsoft.Ink.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\BodyBackground.cs" />
+    <Compile Include="Shapes\Ellipse.cs" />
+    <Compile Include="Shapes\Ghosts\GhostCollection.cs" />
+    <Compile Include="Shapes\Ghosts\MultiSelectGhost.cs" />
+    <Compile Include="Shapes\Image.cs" />
+    <Compile Include="Shapes\Line.cs" />
+    <Compile Include="Shapes\pActiveAnnotation.cs" />
+    <Compile Include="Shapes\Rectangle.cs" />
+    <Compile Include="Shapes\Text.cs" />
+    <Compile Include="DrawingPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmAddText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddText.designer.cs">
+      <DependentUpon>frmAddText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupEngine.cs" />
+    <Compile Include="Tools\Hand.cs" />
+    <Compile Include="Tools\CopyPoint.cs" />
+    <Compile Include="Tools\Deform.cs" />
+    <Compile Include="Tools\Draft.cs" />
+    <Compile Include="Tools\Draw.cs" />
+    <Compile Include="Tools\DrawCurveLine.cs" />
+    <Compile Include="Tools\DrawFreeLine.cs" />
+    <Compile Include="Tools\DrawShape.cs" />
+    <Compile Include="Tools\DrawSloppedLine.cs" />
+    <Compile Include="Tools\Move.cs" />
+    <Compile Include="Tools\MultiSelect.cs" />
+    <Compile Include="Tools\pActiveCurve.cs" />
+    <Compile Include="Tools\Pointer.cs" />
+    <Compile Include="Tools\Resize.cs" />
+    <Compile Include="Tools\Rotate.cs" />
+    <Compile Include="Tools\ToolEventArgs.cs" />
+    <Compile Include="ucAddText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAddText.designer.cs">
+      <DependentUpon>ucAddText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucButtomSelectPenWidth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucButtomSelectPenWidth.Designer.cs">
+      <DependentUpon>ucButtomSelectPenWidth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcSelectPenWidth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcSelectPenWidth.Designer.cs">
+      <DependentUpon>UcSelectPenWidth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucToolsSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucToolsSelector.Designer.cs">
+      <DependentUpon>ucToolsSelector.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Circle.cur" />
+    <EmbeddedResource Include="Cursor1.cur" />
+    <EmbeddedResource Include="Ellipse.cur" />
+    <EmbeddedResource Include="Eraser.cur" />
+    <EmbeddedResource Include="Line.cur" />
+    <EmbeddedResource Include="Pencil.cur" />
+    <EmbeddedResource Include="PolyHandle.cur" />
+    <EmbeddedResource Include="Rectangle.cur" />
+    <EmbeddedResource Include="ucButtomSelectPenWidth.resx">
+      <DependentUpon>ucButtomSelectPenWidth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcSelectPenWidth.resx">
+      <DependentUpon>UcSelectPenWidth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucToolsSelector.resx">
+      <DependentUpon>ucToolsSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\text_allcaps.png" />
+    <None Include="Resources\Rotate.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DrawingPanel.resx">
+      <DependentUpon>DrawingPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddText.resx">
+      <DependentUpon>frmAddText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAddText.resx">
+      <DependentUpon>ucAddText.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gtk-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock_draw-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock_draw-ellipse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock_draw-rounded-square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paintbrush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool_pan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\freelance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sbn.FramWork.Drawing\Sbn.FramWork.Drawing.csproj">
+      <Project>{78bcb00a-3190-45dc-a89c-5f1c71f3fba2}</Project>
+      <Name>Sbn.FramWork.Drawing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBNFramWork\Sbn.FramWork.csproj">
+      <Project>{f18b6c11-6c79-465a-a084-aea1c69ecb15}</Project>
+      <Name>Sbn.FramWork</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

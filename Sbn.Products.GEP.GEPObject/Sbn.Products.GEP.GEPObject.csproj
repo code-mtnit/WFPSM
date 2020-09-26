@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36597935-F438-483F-80CD-E5BF6BB05282}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sbn.Products.GEP.GEPObject</RootNamespace>
+    <AssemblyName>Sbn.Products.GEP.GEPObject</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.MSXML2">
+      <HintPath>..\Sbn.Libs.XMLPareser\bin\Debug\Interop.MSXML2.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnnotationElementdcc83688-a5b8-4b99-8817-df9f27f32812..cs" />
+    <Compile Include="AnnotationElements3b9518ca-8498-4e5a-a774-0c96ae617cb1..cs" />
+    <Compile Include="AnnotationPicturefdea6285-a9e6-468f-b4ab-0078fe80aa88..cs" />
+    <Compile Include="AnnotationPicturesa57abd0c-4cb7-48d7-87a1-902cfaf250dc..cs" />
+    <Compile Include="AnnouncementAttachade19068-ba8f-42bc-b507-e3afccb2f82b..cs" />
+    <Compile Include="AnnouncementAttachsbb538e93-eb9c-48a3-98e7-257ab8fb5254..cs" />
+    <Compile Include="AO_ApprovalLetter2f1a0f31-d165-4591-bd58-408d1eeeac8d..cs" />
+    <Compile Include="AO_ApprovalLetters4b9a49a6-8353-4f19-b8c6-5f1c6cb3b37e..cs" />
+    <Compile Include="AO_Offer75ce6cd9-9785-44ef-8199-f6dca3e3a785..cs" />
+    <Compile Include="AO_Offers8183ee03-bf66-43f7-967c-79e0917aff97..cs" />
+    <Compile Include="ApprovallChange.cs" />
+    <Compile Include="ApprovallChanges.cs" />
+    <Compile Include="ApprovalLetter.cs" />
+    <Compile Include="ApprovalLetterRefineStatusSearch.cs" />
+    <Compile Include="ApprovalLetterRefineStatusSearchs.cs" />
+    <Compile Include="ApprovalLetters1823b0c7-29e1-449b-981b-4d7085aea772..cs" />
+    <Compile Include="Bookmarkd0e68cbe-fb50-4861-9965-5f49491ddf27..cs" />
+    <Compile Include="Bookmarks91f8f634-b5d9-4927-90b2-02667486805c..cs" />
+    <Compile Include="CancelCommissionSessionOrder19e9d889-99f4-4a61-8fc5-56974fb8b2.cs" />
+    <Compile Include="CancelCommissionSessionOrdersb8e6276b-a912-499d-8634-b6ef03017a.cs" />
+    <Compile Include="Catalogue0392f175-77da-4fcf-bf12-8e9be0dff8ea..cs" />
+    <Compile Include="Cataloguescbbb41f6-e69c-4696-b780-0bc90b8001b3..cs" />
+    <Compile Include="CommissionExpertceb4cc67-7201-4ae5-95e6-27e04a19d500..cs" />
+    <Compile Include="CommissionExperts6dc0c0c2-bf4f-4515-beea-eeac534e836f..cs" />
+    <Compile Include="CommissionSessionf6fb4dbc-f503-4ef8-afc6-caaf2f7c9976..cs" />
+    <Compile Include="CommissionSessionMemberbf89c11c-4974-4d97-98a3-e410c546bc75..cs" />
+    <Compile Include="CommissionSessionMembersb2215015-650d-4a65-962b-87d78698cdca..cs" />
+    <Compile Include="CommissionSessionOrder19e9d889-99f4-4a61-8fc5-56974fb8b2c1..cs" />
+    <Compile Include="CommissionSessionOrdersb8e6276b-a912-499d-8634-b6ef03017a23..cs" />
+    <Compile Include="CommissionSessionse86d409d-af80-4343-983d-d2e766ef7771..cs" />
+    <Compile Include="CommissionSessionVoice.cs" />
+    <Compile Include="CommissionSessionVoiceFile.cs" />
+    <Compile Include="CommissionSessionVoices.cs" />
+    <Compile Include="CommissionStaticMember69b6243b-2044-4211-804f-896fa0e6fc31..cs" />
+    <Compile Include="CommissionStaticMembersf23e8f53-2174-4ccb-9139-28fca785f138..cs" />
+    <Compile Include="ComSessionMemberOpiniona532fa5f-e886-4096-8284-99d34d06330e..cs" />
+    <Compile Include="ComSessionMemberOpinions11175d3e-9931-48c7-b9dd-c4a8a0b7e879..cs" />
+    <Compile Include="CouncilApproval1a80a441-7581-4435-816e-a30d928ebc3a..cs" />
+    <Compile Include="CouncilApprovalse35638d3-69e7-45a0-bb09-be0eaec0e377..cs" />
+    <Compile Include="DeliveredDocument4650e6a6-ffba-421d-96d4-e3dc3d00e32e..cs" />
+    <Compile Include="DeliveredDocumentsfe820591-e1f6-4c30-92e0-719fa5b2a13a..cs" />
+    <Compile Include="Engineering74611c4d-1bb1-4546-8455-89989a8129ca..cs" />
+    <Compile Include="Engineerings3108975b-b7ce-414b-b1cd-1439a5f03dfc..cs" />
+    <Compile Include="ExpertLawDocument49d322d4-028c-411e-8fa0-76848caa3fb5..cs" />
+    <Compile Include="ExpertLawDocuments58783861-6495-409f-80f3-73598add5285..cs" />
+    <Compile Include="FileSetting.cs" />
+    <Compile Include="FileSettings.cs" />
+    <Compile Include="GeneralDocumentf0ed34bc-49aa-4cfd-9779-2b3e006af748..cs" />
+    <Compile Include="GeneralDocuments42c94d26-1265-4d6b-a38d-efbe8085ac43..cs" />
+    <Compile Include="GeneralSession19f21a49-11e4-4cd1-92bc-0d0cb375e4bd..cs" />
+    <Compile Include="GeneralSessions219113b3-c16e-44bd-b798-c7618a379f82..cs" />
+    <Compile Include="GEPApprovalTypea4161c0e-24f0-4a8f-a0c3-eb0fde4b5158..cs" />
+    <Compile Include="GEPCommissionSessionTypeb66ee47f-b842-4758-a442-25e903b1f6dd..cs" />
+    <Compile Include="GEPLawSourceType69611bdb-9167-4672-bb95-23b2ae6e2205..cs" />
+    <Compile Include="GEPLetterActionType26dbd3ee-2e25-4a23-9022-b1c64ad21550..cs" />
+    <Compile Include="GEPLetterReceiptType7abda3da-74ff-400a-ba15-c3becd49b6c6..cs" />
+    <Compile Include="GEPLetterStatusType6b651f7f-a157-43dc-9052-5d85a6a51987..cs" />
+    <Compile Include="GEPLetterType3ab781b6-e6f0-428a-99e6-99bcae6ba2a5..cs" />
+    <Compile Include="GEPOfferFinalDecisionType1a41a39b-bb24-4e94-a2d7-0ef6a522ec0e..cs" />
+    <Compile Include="GEPOfferStatusType21fd31b0-8b93-4a25-94ab-9390a6565ad7..cs" />
+    <Compile Include="GEPOfferUrgencyType5e4367a7-1d41-44fa-a748-d112607183f0..cs" />
+    <Compile Include="GEPOpinionType7bb873c8-fb26-4fe9-a046-d1c5b45ec426..cs" />
+    <Compile Include="GEPRellationToOfferTypea220247a-f750-4b08-8b21-00d4f5b8c505..cs" />
+    <Compile Include="GEPSensitivityType91a9b989-7e81-4ca3-8109-c911f10e83eb..cs" />
+    <Compile Include="GEPSessionMemberType8a3616af-9c06-4594-88bd-979ae44600bd..cs" />
+    <Compile Include="GEPSessionType77a738ef-8d15-4bfc-8e52-d230621188ca..cs" />
+    <Compile Include="GovAnnouncementb9916269-1c2c-4a34-a497-58c899934777..cs" />
+    <Compile Include="GovAnnouncements94ce313c-67c7-4e5a-b321-5ef2040f735d..cs" />
+    <Compile Include="GovCommuniquePursuit63758b40-1600-4ae1-a8be-ced595c8ce92..cs" />
+    <Compile Include="GovCommuniquePursuits47ba2ccd-f09d-438e-8c3a-4edc147c3d53..cs" />
+    <Compile Include="GovernmentReport26e52dea-55f1-40a4-ad9a-4091d4b3d9eb..cs" />
+    <Compile Include="GovernmentReportPicture211b0f19-0e67-4eef-ae2e-df6fd52ea0e9..cs" />
+    <Compile Include="GovernmentReportPicturesf5a356c5-4382-4d96-9ded-cfc32eda058b..cs" />
+    <Compile Include="GovernmentReportsb43a7cf9-466b-4e03-9c2b-25ec19a03957..cs" />
+    <Compile Include="GovernmentSessionOrder673e5fb8-5313-41b6-8cf8-664e81b4f705..cs" />
+    <Compile Include="GovernmentSessionOrdersbbd9616e-c830-4077-8333-8e8e7723d8d7..cs" />
+    <Compile Include="GovernStaticMemberdbeb583c-1287-4109-b929-9fd3aab9ef62..cs" />
+    <Compile Include="GovernStaticMembersc60a3489-8fea-457c-bf77-756fcebb74e4..cs" />
+    <Compile Include="GovSession852ef669-f9ab-4cda-8888-f1b24cbf25b9..cs" />
+    <Compile Include="GovSessionMemberf8bfa44d-457b-4538-9306-cdfbda7c8fd3..cs" />
+    <Compile Include="GovSessionMemberOpinion8a9b163c-bf43-457f-8132-3cb52881c3de..cs" />
+    <Compile Include="GovSessionMemberOpinions0c036744-2dba-4c30-b289-cec6011dd016..cs" />
+    <Compile Include="GovSessionMembersf7882b9b-a52e-4875-8d7d-5ddc880899fd..cs" />
+    <Compile Include="GovSessionMessaging.cs" />
+    <Compile Include="GovSessions30877d56-d717-4f7f-aaf4-c6bdd44ff345..cs" />
+    <Compile Include="Idea675ca223-7f5d-4add-bbd1-655883ae79fa..cs" />
+    <Compile Include="IdeaCategoriese9d1a3c0-d238-435d-9ed8-b6d36a1ffa32..cs" />
+    <Compile Include="IdeaCategory57783bc3-187a-4bff-93cd-03d48f40b358..cs" />
+    <Compile Include="Ideas51d4e2ff-81f5-49a2-a8c4-1d17f48197ed..cs" />
+    <Compile Include="IdeaSubject.cs" />
+    <Compile Include="Inquiries4221389e-4d07-47bf-8bad-dc2c14220d7a..cs" />
+    <Compile Include="Inquiry79d55db9-c692-42f7-a873-4ef04d3bb26b..cs" />
+    <Compile Include="InquiryPursuit345820a5-a097-4860-bf8a-7f844d2f4b04..cs" />
+    <Compile Include="InquiryPursuitsd875e317-ba75-4c69-bc46-b0346e3999bf..cs" />
+    <Compile Include="InquiryResponse45772302-e475-4be2-b92a-887e63b0d65e..cs" />
+    <Compile Include="InquiryResponses8003c535-fe04-4967-9005-1e01e2f0925c..cs" />
+    <Compile Include="Law72537ce6-b105-4a57-bed2-6a0fc9b5db9b..cs" />
+    <Compile Include="LawDocumentTemplate4cc7a0fc-ced7-46e7-9483-d9867d4d48db..cs" />
+    <Compile Include="LawDocumentTemplates498a6d0a-6cee-4f54-9037-8b4829413d8e..cs" />
+    <Compile Include="Laws47a1cfcf-f7b1-45f3-baf3-cbfa195030fd..cs" />
+    <Compile Include="Letter7e024505-7a19-4029-af0d-34a8f8affc4e..cs" />
+    <Compile Include="LetterAttachmentfb1a239a-d4a6-4d8d-915a-96ff274893a1..cs" />
+    <Compile Include="LetterAttachments7e71aad9-71e7-4e0c-ae7e-66de9cf1ee1d..cs" />
+    <Compile Include="LetterPicture585527b3-2957-4799-8af4-eb3db9630636..cs" />
+    <Compile Include="LetterPicturese9e6f528-ee03-4f4d-b862-fd35280e1259..cs" />
+    <Compile Include="LetterRecipient5f07d260-db53-4eb8-858a-4cb9b774e24c..cs" />
+    <Compile Include="LetterRecipients9ddbf0de-d745-4096-8002-24120893d252..cs" />
+    <Compile Include="Letters079db8d6-612b-43a1-96e7-5a1e645c9a82..cs" />
+    <Compile Include="GovPresentation.cs" />
+    <Compile Include="Offer320a1adb-83f9-4a5a-b6a1-e4e93e91fb17..cs" />
+    <Compile Include="OfferAbstractb48162b5-4a56-4f61-a26c-32efdd4a3c2c..cs" />
+    <Compile Include="OfferAbstractse0dc30d7-de6c-45e8-a5b0-5bc892bdcd87..cs" />
+    <Compile Include="OfferCategories9aca8de6-6852-4731-a86b-c5b27188e0e1..cs" />
+    <Compile Include="OfferCategoryc32b711b-3a5f-413a-8add-83421954099d..cs" />
+    <Compile Include="OfferCommissionc90a65a6-17a2-457e-92e1-79e1db6978ad..cs" />
+    <Compile Include="OfferCommissionReport1b79a8c5-1ec4-43bd-b1c2-b2d6f0d614c1..cs" />
+    <Compile Include="OfferCommissionReportPic3f31c9d0-2337-4bbb-95ee-86bfa9713337..cs" />
+    <Compile Include="OfferCommissionReportPics625eaf8c-85fc-4e7e-9fc9-f4690b8ef20e..cs" />
+    <Compile Include="OfferCommissionReports16329654-8f88-43df-98d8-27e632968178..cs" />
+    <Compile Include="OfferCommissionResultae4c0700-6c89-4428-85b7-a4fded0065ae..cs" />
+    <Compile Include="OfferCommissionResultsbdc24c31-a48c-49e5-8341-631087313f37..cs" />
+    <Compile Include="OfferCommissions80d6c49d-6cc7-48c6-9f57-fb3c5017d163..cs" />
+    <Compile Include="OfferCommuniqueText4b603a9b-bfc5-4651-93b6-6851ec40da94..cs" />
+    <Compile Include="OfferCommuniqueTextsdbc8ca5f-d466-48b6-a1f1-b108cc2c97e8..cs" />
+    <Compile Include="OfferOrgUnitcdd0a1a2-e0bb-4559-ae17-d06557bef128..cs" />
+    <Compile Include="OfferOrgUnitsf5579762-a8b1-44be-9d1c-86f298f1cc64..cs" />
+    <Compile Include="OfferRelation.cs" />
+    <Compile Include="OfferRelations.cs" />
+    <Compile Include="GovPresentations.cs" />
+    <Compile Include="Offersdce668a7-c18e-46cb-a220-0ba61623c537..cs" />
+    <Compile Include="OfferSubjectb8dc3b1c-52f8-49ec-84d7-d4838fc171ae..cs" />
+    <Compile Include="OfferSubjects85eb3f51-da7a-4b9e-b3d5-dcba80b1b3d0..cs" />
+    <Compile Include="OfferTemp.cs" />
+    <Compile Include="OfferTemps.cs" />
+    <Compile Include="Opinion14189b82-3910-4899-9071-3df92f6b3c62..cs" />
+    <Compile Include="Opinionsd2643716-f8a4-4ba2-bd7c-33507a6fac28..cs" />
+    <Compile Include="ParliamentNotice3f7bc4f5-a13d-411f-aea7-c854a168d59a..cs" />
+    <Compile Include="ParliamentNotices353de5a6-6f76-4f18-8b38-5ecc5a18cde3..cs" />
+    <Compile Include="PersonalFolderc2c232ea-e89e-4d1f-95be-c4b667ac3771..cs" />
+    <Compile Include="PersonalFolders873cd7e8-8010-4678-be1a-717bbdcf8115..cs" />
+    <Compile Include="Precept550dbd35-e41b-410f-afbd-77b5dba9b51d..cs" />
+    <Compile Include="Preceptsbeeb568f-c02d-475f-838b-065f44b5dc4c..cs" />
+    <Compile Include="PreObservation47b948f5-3f4f-49b6-aef1-47b5ea304302..cs" />
+    <Compile Include="PreObservationPiced39c2b5-c0d6-465b-86aa-4eb5da851773..cs" />
+    <Compile Include="PreObservationPicsc3a16863-ba16-4afb-af23-879d771b8196..cs" />
+    <Compile Include="PreObservations6c9ca30f-1e3a-43f4-87eb-303491fa30b3..cs" />
+    <Compile Include="PresentationAttach713d118b-598a-4bf5-b6a0-cf94ecf8337b..cs" />
+    <Compile Include="PresentationAttachsc41c7e58-d7d8-44a6-9601-895e83534d02..cs" />
+    <Compile Include="Presentationee69c5a1-875b-41d6-b526-9372bc9765d3..cs" />
+    <Compile Include="Presentations4cd6469b-ec38-4a83-91fb-37fc95962dc0..cs" />
+    <Compile Include="PreSessionOrderc5cf2ced-6967-4c78-a63d-b23f372fa954..cs" />
+    <Compile Include="PreSessionOrders2b5fc059-6a39-4004-b777-659523fbb2cc..cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TMU\Subject.cs" />
+    <Compile Include="TMU\Subjects.cs" />
+    <Compile Include="WordDocument0fa56376-0bc4-4ff3-99f2-fc97d0feacbb..cs" />
+    <Compile Include="WordDocumentseff9a2f2-e02d-4059-8f7c-3de68ff45257..cs" />
+    <Compile Include="WordTemplate61ba8db6-5ad9-4cd6-be3d-9af15228cf40..cs" />
+    <Compile Include="WordTemplates6eb52645-02e1-4b00-a820-97586373b153..cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sbn.Controls.Imaging.ImagingObject\Sbn.Controls.Imaging.ImagingObject.csproj">
+      <Project>{fc9855d8-d807-4663-9281-a58f91bac642}</Project>
+      <Name>Sbn.Controls.Imaging.ImagingObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Libs.AssemblyTools\Sbn.Libs.AssemblyTools\Sbn.Libs.AssemblyTools.csproj">
+      <Project>{95ec7caa-0c9f-497e-9779-687b0deff64d}</Project>
+      <Name>Sbn.Libs.AssemblyTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Libs.XMLPareser\Sbn.Libs.XMLPareser.csproj">
+      <Project>{04f4ea2f-4d90-4726-ade0-854a63dfe904}</Project>
+      <Name>Sbn.Libs.XMLPareser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Products.GAP.GAPObject\Sbn.Products.GAP.GAPObject\Sbn.Products.GAP.GAPObject.csproj">
+      <Project>{370b3230-6ba4-4cac-ad91-34fc284c8721}</Project>
+      <Name>Sbn.Products.GAP.GAPObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Systems.ELS.ELSObject\Sbn.Systems.ELS.ELSObject\Sbn.Systems.ELS.ELSObject.csproj">
+      <Project>{0cd16852-a8b8-4b97-9787-c40d64ec6065}</Project>
+      <Name>Sbn.Systems.ELS.ELSObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Systems.OPS.OPSObject\Sbn.Systems.OPS.OPSObject.csproj">
+      <Project>{902dbc27-bd68-4a7b-977e-d98288575a1a}</Project>
+      <Name>Sbn.Systems.OPS.OPSObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Systems.WMC.WMCObject\Sbn.Systems.WMC.WMCObject.csproj">
+      <Project>{47302fdd-8529-44cf-95d8-8b5259040eca}</Project>
+      <Name>Sbn.Systems.WMC.WMCObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBNCore\SBNCore\SBNCore.csproj">
+      <Project>{121361c1-78a9-43e9-83fa-43d3439b198f}</Project>
+      <Name>SBNCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

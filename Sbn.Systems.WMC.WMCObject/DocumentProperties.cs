@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.ComponentModel;
+using Sbn.Libs.AssemblyTools;
+using Sbn.Core;
+using Sbn.Core;
+namespace Sbn.Systems.WMC.WMCObject
+{
+[Description("")]
+[DisplayName ("")]
+    [ItemsType("Sbn.Systems.WMC.WMCObject.DocumentProperty")]
+    [SystemName("WMC")]
+
+[Serializable]
+public class DocumentProperties : SbnListObject<DocumentProperty> 
+{
+#region Constructors
+public DocumentProperties()
+: base()
+{
+}
+#endregion Constructors
+public override object  Clone(string sNodeName)
+{
+DocumentProperties Col = new  DocumentProperties ();
+foreach (DocumentProperty objMember in this)
+{
+Col.Add((DocumentProperty)objMember.Clone(sNodeName));
+}
+return Col;
+}
+}
+}

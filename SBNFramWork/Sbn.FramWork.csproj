@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F18B6C11-6C79-465A-A084-AEA1C69ECB15}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sbn.FramWork</RootNamespace>
+    <AssemblyName>Sbn.FramWork</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchableControls\FindDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SearchableControls\FindDialog.designer.cs">
+      <DependentUpon>FindDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchableControls\FindForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchableControls\FindForm.designer.cs">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchableControls\InfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchableControls\InfoForm.designer.cs">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchableControls\ISearchable.cs" />
+    <Compile Include="SearchableControls\ReplaceEventArgs.cs" />
+    <Compile Include="SearchableControls\ReplaceEventHandler.cs" />
+    <Compile Include="SearchableControls\SearchableControls.cs" />
+    <Compile Include="SearchableControls\SearchableListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SearchableControls\SearchableListView.designer.cs">
+      <DependentUpon>SearchableListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Forms\RichTextBox\SBNRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\RichTextBox\SBNRichTextBox.designer.cs">
+      <DependentUpon>SBNRichTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchableControls\SearchableTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SearchableControls\SearchableTextBox.designer.cs">
+      <DependentUpon>SearchableTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchableControls\SearchEventArgs.cs" />
+    <Compile Include="SearchableControls\SearchEventHandler.cs" />
+    <Compile Include="Windows\Forms\BindingNavigatorFolder\SBNBindingNavigatorDEL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\BindingNavigatorFolder\SBNBindingNavigatorDEL.Designer.cs">
+      <DependentUpon>SBNBindingNavigatorDEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Forms\BindingNavigatorFolder\SBNBindingNavigator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\BindingNavigatorFolder\SBNBindingNavigator.Designer.cs">
+      <DependentUpon>SBNBindingNavigator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Forms\ButtonFolder\VistaButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\CheckBoxFolder\SBNCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\ComboboxFolder\SBNComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\ComboboxFolder\SBNComboBox.Designer.cs">
+      <DependentUpon>SBNComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Forms\ContextMenuStripFolder\SBNContextMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\DataGridViewFolder\ExtendedDataGridView\DataGridViewEnumColumn.cs" />
+    <Compile Include="Windows\Forms\DataGridViewFolder\ExtendedDataGridView\DataGridViewExporter.cs" />
+    <Compile Include="Windows\Forms\DataGridViewFolder\ExtendedDataGridView\ExtendedDataGridView.ContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\DataGridViewFolder\ExtendedDataGridView\ExtendedDataGridView.Keys.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\DataGridViewFolder\ExtendedDataGridView\ExtendedDataGridView.Properties.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\DataGridViewFolder\ExtendedDataGridView\ExtendedDataGridView.Search.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\DataGridViewFolder\ExtendedDataGridView\ExtendedDataGridViewColumnCollectionEditor.cs" />
+    <Compile Include="Windows\Forms\DataGridViewFolder\ExtendedDataGridView\ExtendedDataGridViewDesigner.cs" />
+    <Compile Include="Windows\Forms\DataGridViewFolder\ExtendedDataGridView\PanelQuickSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\DataGridViewFolder\ExtendedDataGridView\PanelQuickSearch.designer.cs">
+      <DependentUpon>PanelQuickSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Forms\DataGridViewFolder\MaskedCell\DataGridViewMaskedTextCell.cs" />
+    <Compile Include="Windows\Forms\DataGridViewFolder\MaskedCell\DataGridViewMaskedTextColumn.cs" />
+    <Compile Include="Windows\Forms\DataGridViewFolder\MaskedCell\DataGridViewMaskedTextControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\DataGridViewFolder\MaskedCell\ReferencedDescriptionAttribute.cs" />
+    <Compile Include="Windows\Forms\DataGridViewFolder\SBNDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\GroupBoxFolder\SBNGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\LabelFolder\SBNLable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\ListViewFolder\SBNListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\MenuStripFolder\SBNMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\OtherForms\AeroNonClientButtons\Dwm.cs" />
+    <Compile Include="Windows\Forms\OtherForms\frmAddEditView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\OtherForms\frmAddEditView.Designer.cs">
+      <DependentUpon>frmAddEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Forms\OtherForms\MdiClientController.cs" />
+    <Compile Include="Windows\Forms\OtherForms\SBNFormController.cs" />
+    <Compile Include="Windows\Forms\PanelFolder\SBNPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\RadioButtonFolder\SBNRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\Ribbon\RibbonColor.cs" />
+    <Compile Include="Windows\Forms\Ribbon\RibbonCommandButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\Ribbon\RibbonMenuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\Ribbon\RibbonPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\SBNForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\SBNForm.Designer.cs">
+      <DependentUpon>SBNForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Forms\SBNUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\SBNUserControl.Designer.cs">
+      <DependentUpon>SBNUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Forms\SplitContainerFolder\SBNSplitContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\StatusStripFolder\SBNStatusStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TabControlFolder\SBNTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TextBoxFolder\SBNTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\ToolStripFolder\Renderer\AeroglassRenderer.cs" />
+    <Compile Include="Windows\Forms\ToolStripFolder\SBNToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TreeViewFolder\SBNTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Forms\TreeViewFolder\SBNTreeView.designer.cs">
+      <DependentUpon>SBNTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Win32Messages.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Words\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchableControls\FindDialog.resx">
+      <DependentUpon>FindDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchableControls\FindForm.resx">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchableControls\InfoForm.resx">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchableControls\SearchableListView.resx">
+      <DependentUpon>SearchableListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\RichTextBox\SBNRichTextBox.resx">
+      <DependentUpon>SBNRichTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchableControls\SearchableTextBox.resx">
+      <DependentUpon>SearchableTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\BindingNavigatorFolder\SBNBindingNavigatorDEL.resx">
+      <DependentUpon>SBNBindingNavigatorDEL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\BindingNavigatorFolder\SBNBindingNavigator.resx">
+      <DependentUpon>SBNBindingNavigator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\ButtonFolder\VistaButton.resx">
+      <DependentUpon>VistaButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\ComboboxFolder\SBNComboBox.resx">
+      <DependentUpon>SBNComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\DataGridViewFolder\ExtendedDataGridView\PanelQuickSearch.resx">
+      <DependentUpon>PanelQuickSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\DataGridViewFolder\SBNDataGridView.resx">
+      <DependentUpon>SBNDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\LabelFolder\SBNLable.resx">
+      <DependentUpon>SBNLable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\OtherForms\frmAddEditView.resx">
+      <DependentUpon>frmAddEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\SBNForm.resx">
+      <DependentUpon>SBNForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\SBNUserControl.resx">
+      <DependentUpon>SBNUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Forms\TreeViewFolder\SBNTreeView.resx">
+      <DependentUpon>SBNTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rotate.ico" />
+    <None Include="Resources\text_allcaps.png" />
+    <None Include="Resources\Blue hills.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide-left16.png" />
+    <None Include="Resources\hide-right16.png" />
+    <None Include="Resources\navigate-left16.png" />
+    <None Include="Resources\navigate-right16.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\IconCSV16.png" />
+    <None Include="Resources\IconExcel16.png" />
+    <Content Include="Windows\Forms\ToolStripFolder\ToolStrip.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

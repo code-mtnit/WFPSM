@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8BBB9FD2-2E8A-44F8-8A1E-E1F01B3A57C8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SbnImaging</RootNamespace>
+    <AssemblyName>SbnImaging</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Hatefnet.Products.Controls.Magnifier, Version=1.87.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Hatefnet.Products.Controls.Magnifier.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Ink, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Sayban\References\Tablet PC\Microsoft.Ink.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Ink.resources, Version=6.1.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Sayban\References\Tablet PC\Microsoft.Ink.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Popup">
+      <HintPath>..\..\lib\Popup.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveTools.cs" />
+    <Compile Include="Annotation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Annotation.Designer.cs">
+      <DependentUpon>Annotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseImage.cs" />
+    <Compile Include="BindingImageNavigator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BindingImageNavigator.Designer.cs">
+      <DependentUpon>BindingImageNavigator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventArgs\SbnImageEventHandler.cs" />
+    <Compile Include="EventArgs\ImageEventArg.cs" />
+    <Compile Include="EventArgs\ImageEventArgs.cs" />
+    <Compile Include="ImageDocumentsViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageDocumentsViewer.Designer.cs">
+      <DependentUpon>ImageDocumentsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintPreView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintPreView.Designer.cs">
+      <DependentUpon>frmPrintPreView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScan.Designer.cs">
+      <DependentUpon>frmScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageDocumentBindingSource.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageDocumentBindingSource.Designer.cs">
+      <DependentUpon>ImageDocumentBindingSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\ImageDocumentsManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewFolder1\ImageDocumentsManager.Designer.cs">
+      <DependentUpon>ImageDocumentsManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParaphControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParaphControl.Designer.cs">
+      <DependentUpon>ParaphControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PenSelectorViewStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SbnImageTools.cs" />
+    <Compile Include="StandardPaper.cs" />
+    <Compile Include="ThumbnailList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThumbnailList.Designer.cs">
+      <DependentUpon>ThumbnailList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ImageDocumentEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageDocumentEditor.Designer.cs">
+      <DependentUpon>ImageDocumentEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucPenWidth.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPenWidth.Designer.cs">
+      <DependentUpon>ucPenWidth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Annotation.resx">
+      <DependentUpon>Annotation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BindingImageNavigator.resx">
+      <DependentUpon>BindingImageNavigator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageDocumentsViewer.resx">
+      <DependentUpon>ImageDocumentsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintPreView.resx">
+      <DependentUpon>frmPrintPreView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScan.resx">
+      <DependentUpon>frmScan.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewFolder1\ImageDocumentsManager.resx">
+      <DependentUpon>ImageDocumentsManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParaphControl.resx">
+      <DependentUpon>ParaphControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThumbnailList.resx">
+      <DependentUpon>ThumbnailList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageDocumentEditor.resx">
+      <DependentUpon>ImageDocumentEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPenWidth.resx">
+      <DependentUpon>ucPenWidth.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GraphicTools\GraphicTools.csproj">
+      <Project>{6d09b7fb-25da-4b54-ad1b-7c6a964b7794}</Project>
+      <Name>GraphicTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Controls.Imaging.ImagingObject\Sbn.Controls.Imaging.ImagingObject.csproj">
+      <Project>{fc9855d8-d807-4663-9281-a58f91bac642}</Project>
+      <Name>Sbn.Controls.Imaging.ImagingObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.FramWork.Drawing\Sbn.FramWork.Drawing.csproj">
+      <Project>{78bcb00a-3190-45dc-a89c-5f1c71f3fba2}</Project>
+      <Name>Sbn.FramWork.Drawing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBNCore\SBNCore\SBNCore.csproj">
+      <Project>{121361c1-78a9-43e9-83fa-43d3439b198f}</Project>
+      <Name>SBNCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBNFramWork\Sbn.FramWork.csproj">
+      <Project>{f18b6c11-6c79-465a-a084-aea1c69ecb15}</Project>
+      <Name>Sbn.FramWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBNImageViewer\ImageViewer.csproj">
+      <Project>{ad2da6be-4dad-4bd3-bcf3-9ddd17782fec}</Project>
+      <Name>ImageViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SbnPaint\Sbn.Paint.csproj">
+      <Project>{fe53055c-2eac-4a86-98a9-333e3b72a1f4}</Project>
+      <Name>Sbn.Paint</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBNScan\SBNScan.csproj">
+      <Project>{a6039aa4-49ba-41b9-b69d-1addc17a1c49}</Project>
+      <Name>SBNScan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThumbnailControl\ThumbnailControl.csproj">
+      <Project>{fc66c626-46a1-4750-a972-84f7e96243a7}</Project>
+      <Name>ThumbnailControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\134 copy24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\application_put.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\briefcase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BrushWidth24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color_wheel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disk_multiple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magifier_zoom_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier_zoom_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_white_magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paintbrush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\palette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture_go Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture_go1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pictures.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resultset_first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resultset_last.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resultset_next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resultset_previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shape_flip_horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shape_flip_vertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shape_rotate_anticlockwise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shape_rotate_clockwise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shape_square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showActualSize.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showActualSize1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showFitWidth.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showFitWidth1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showWhole.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showWhole1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_allcaps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool_pan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NewFolder1\ImageDocumentsManager.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\briefcase1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete24.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

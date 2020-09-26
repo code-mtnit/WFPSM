@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{5375FAD9-3FFA-4AF6-847A-7015DCA31E13}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Sbn.FramWork</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JThomas.Extensions\ReferencedDescriptionAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sbn.FramWork.Properties\Resources.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.ExtendedDataGridView\AbstractDataGridViewExporter.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.ExtendedDataGridView\DataGridViewEnumCell.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.ExtendedDataGridView\DataGridViewEnumColumn.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.ExtendedDataGridView\DataGridViewExporter.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.ExtendedDataGridView\Excel.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.ExtendedDataGridView\ExtendedDataGridViewColumnCollectionEditor.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.ExtendedDataGridView\ExtendedDataGridViewDesigner.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.ExtendedDataGridView\PanelQuickSearch.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.MaskedCell\DataGridViewMaskedTextCell.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.MaskedCell\DataGridViewMaskedTextColumn.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.MaskedCell\DataGridViewMaskedTextEditingControl.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.OtherForms.AeroNonClientButtons\Dwm.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.OtherForms\frmAddEditView.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.OtherForms\MdiClientController.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.OtherForms\RquestType.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.OtherForms\SBNFormController.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.Ribbon\RibbonColor.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.Ribbon\RibbonCommandButton.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.Ribbon\RibbonMenu.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.Ribbon\RibbonMenuButton.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.Ribbon\RibbonMenuPanel.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.Ribbon\RibbonMenuRenderer.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.Ribbon\RibbonPanel.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms.ToolStripFolder.Renderer\AeroglassRenderer.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\ColumnOrderItem.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\gfDataGridViewSetting.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNBindingNavigator.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNBindingNavigatorDEL.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNButton.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNCheckBox.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNComboBox.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNContextMenuStrip.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNDataGridView.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNForm.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNGroupBox.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNLabel.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNListView.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNMenuStrip.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNPanel.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNRadioButton.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNSplitContainer.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNStatusStrip.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNTabControl.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNTextBox.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNToolStrip.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNTreeView.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SBNUserControl.cs" />
+    <Compile Include="Sbn.FramWork.Windows.Forms\SearchableRichTextBox.cs" />
+    <Compile Include="Sbn.FramWork.Windows\NCCALCSIZE_PARAMS.cs" />
+    <Compile Include="Sbn.FramWork.Windows\RECT.cs" />
+    <Compile Include="Sbn.FramWork.Windows\Win32Messages.cs" />
+    <Compile Include="SearchableControls\FindDialog.cs" />
+    <Compile Include="SearchableControls\FindForm.cs" />
+    <Compile Include="SearchableControls\InfoForm.cs" />
+    <Compile Include="SearchableControls\ISearchable.cs" />
+    <Compile Include="SearchableControls\ReplaceEventArgs.cs" />
+    <Compile Include="SearchableControls\ReplaceEventHandler.cs" />
+    <Compile Include="SearchableControls\SearchableListView.cs" />
+    <Compile Include="SearchableControls\SearchableTextBox.cs" />
+    <Compile Include="SearchableControls\SearchEventArgs.cs" />
+    <Compile Include="SearchableControls\SearchEventHandler.cs" />
+    <Compile Include="SearchableControls\Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sbn.FramWork.Properties\Resources.resx" />
+    <EmbeddedResource Include="Sbn.FramWork.Windows.Forms\SBNButton.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

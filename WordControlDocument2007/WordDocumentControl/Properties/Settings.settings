@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Sbn.AdvancedControls.WordControlDocument.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ImagePrinterName1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Microsoft Office Document Image Writer</Value>
+    </Setting>
+    <Setting Name="ImagePrinterName2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Universal Document Converter</Value>
+    </Setting>
+    <Setting Name="ImagePrinterName3" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Fax</Value>
+    </Setting>
+    <Setting Name="ImagePrinter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Microsoft Office Document Image Writer</Value>
+    </Setting>
+    <Setting Name="Extention" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.tif</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

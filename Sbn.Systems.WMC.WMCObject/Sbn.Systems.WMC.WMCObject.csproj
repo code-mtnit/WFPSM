@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47302FDD-8529-44CF-95D8-8B5259040ECA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sbn.Systems.WMC.WMCObject</RootNamespace>
+    <AssemblyName>Sbn.Systems.WMC.WMCObject</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accessright.cs" />
+    <Compile Include="Accessrights.cs" />
+    <Compile Include="Activities.cs" />
+    <Compile Include="Activity.cs" />
+    <Compile Include="ActivityActionType.cs" />
+    <Compile Include="ActivityArchiveStatus.cs" />
+    <Compile Include="ActivityComplementInfo.cs" />
+    <Compile Include="ActivityComplementInfos.cs" />
+    <Compile Include="ActivityPriorityType.cs" />
+    <Compile Include="AOActivities.cs" />
+    <Compile Include="AOActivity.cs" />
+    <Compile Include="BasicInfo.cs" />
+    <Compile Include="BasicInfoCategories.cs" />
+    <Compile Include="BasicInfoCategory.cs" />
+    <Compile Include="BasicInfoDetail.cs" />
+    <Compile Include="BasicInfoDetails.cs" />
+    <Compile Include="BasicInfos.cs" />
+    <Compile Include="Delegation.cs" />
+    <Compile Include="Delegations.cs" />
+    <Compile Include="Document.cs" />
+    <Compile Include="DocumentProperties.cs" />
+    <Compile Include="DocumentProperty.cs" />
+    <Compile Include="DocumentPropValue.cs" />
+    <Compile Include="DocumentPropValues.cs" />
+    <Compile Include="Documents.cs" />
+    <Compile Include="DocumentType.cs" />
+    <Compile Include="DocumentTypes.cs" />
+    <Compile Include="Folder.cs" />
+    <Compile Include="FolderAccessright.cs" />
+    <Compile Include="FolderAccessrights.cs" />
+    <Compile Include="FolderCategoryType.cs" />
+    <Compile Include="FolderItem.cs" />
+    <Compile Include="FolderItems.cs" />
+    <Compile Include="Folders.cs" />
+    <Compile Include="Icon.cs" />
+    <Compile Include="Icons.cs" />
+    <Compile Include="OrgPosition.cs" />
+    <Compile Include="OrgPositions.cs" />
+    <Compile Include="OrgUnit.cs" />
+    <Compile Include="OrgUnitBuildingLocation.cs" />
+    <Compile Include="OrgUnitBuildingLocations.cs" />
+    <Compile Include="OrgUnits.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyType.cs" />
+    <Compile Include="SubSystem.cs" />
+    <Compile Include="SubSystems.cs" />
+    <Compile Include="Task.cs" />
+    <Compile Include="Tasks.cs" />
+    <Compile Include="TaskStatus.cs" />
+    <Compile Include="TemplateText.cs" />
+    <Compile Include="TemplateTexts.cs" />
+    <Compile Include="TrustedDocument.cs" />
+    <Compile Include="TrustedDocuments.cs" />
+    <Compile Include="UserInterface.cs" />
+    <Compile Include="UserInterfaces.cs" />
+    <Compile Include="UserRegistries.cs" />
+    <Compile Include="UserRegistry.cs" />
+    <Compile Include="WCSenario.cs" />
+    <Compile Include="WCSenarios.cs" />
+    <Compile Include="WFPerson.cs" />
+    <Compile Include="WFPersons.cs" />
+    <Compile Include="WFPlace.cs" />
+    <Compile Include="WFPlaces.cs" />
+    <Compile Include="WFPlaceType.cs" />
+    <Compile Include="WFProcess.cs" />
+    <Compile Include="WFProcesses.cs" />
+    <Compile Include="WFRole.cs" />
+    <Compile Include="WFRoleAccessright.cs" />
+    <Compile Include="WFRoleAccessrights.cs" />
+    <Compile Include="WFRoleRestriction.cs" />
+    <Compile Include="WFRoleRestrictions.cs" />
+    <Compile Include="WFRoles.cs" />
+    <Compile Include="WFUser.cs" />
+    <Compile Include="WFUsers.cs" />
+    <Compile Include="WMCAttachment.cs" />
+    <Compile Include="WMCAttachments.cs" />
+    <Compile Include="WorkContext.cs" />
+    <Compile Include="WorkContexts.cs" />
+    <Compile Include="Worker.cs" />
+    <Compile Include="WorkerAccessright.cs" />
+    <Compile Include="WorkerAccessrights.cs" />
+    <Compile Include="WorkerDomainRestriction.cs" />
+    <Compile Include="WorkerDomainRestrictions.cs" />
+    <Compile Include="WorkerRestriction.cs" />
+    <Compile Include="WorkerRestrictions.cs" />
+    <Compile Include="Workers.cs" />
+    <Compile Include="Workflow.cs" />
+    <Compile Include="Workflows.cs" />
+    <Compile Include="WorkGroup.cs" />
+    <Compile Include="WorkGroupMembership.cs" />
+    <Compile Include="WorkGroupMemberships.cs" />
+    <Compile Include="WorkGroups.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSXML2">
+      <Guid>{F5078F18-C551-11D3-89B9-0000F81FE221}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sbn.Controls.Imaging.ImagingObject\Sbn.Controls.Imaging.ImagingObject.csproj">
+      <Project>{fc9855d8-d807-4663-9281-a58f91bac642}</Project>
+      <Name>Sbn.Controls.Imaging.ImagingObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Libs.AssemblyTools\Sbn.Libs.AssemblyTools\Sbn.Libs.AssemblyTools.csproj">
+      <Project>{95ec7caa-0c9f-497e-9779-687b0deff64d}</Project>
+      <Name>Sbn.Libs.AssemblyTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Libs.XMLPareser\Sbn.Libs.XMLPareser.csproj">
+      <Project>{04f4ea2f-4d90-4726-ade0-854a63dfe904}</Project>
+      <Name>Sbn.Libs.XMLPareser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBNCore\SBNCore\SBNCore.csproj">
+      <Project>{121361c1-78a9-43e9-83fa-43d3439b198f}</Project>
+      <Name>SBNCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

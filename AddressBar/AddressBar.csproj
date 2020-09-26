@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{401D69B5-36AF-4AB8-AE12-AA75C72B0AAB}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>AddressBar</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sbn.Controls.AdvancedControls.AddressBar.Properties\Resources.cs" />
+    <Compile Include="Sbn.Controls.AdvancedControls.AddressBar.Properties\Settings.cs" />
+    <Compile Include="Sbn.Controls.AdvancedControls.AddressBar\AeroChrome.cs" />
+    <Compile Include="Sbn.Controls.AdvancedControls.AddressBar\ApplyPropertiesEventArgs.cs" />
+    <Compile Include="Sbn.Controls.AdvancedControls.AddressBar\ApplyPropertiesEventHandler.cs" />
+    <Compile Include="Sbn.Controls.AdvancedControls.AddressBar\BreadcrumbBar.cs" />
+    <Compile Include="Sbn.Controls.AdvancedControls.AddressBar\BreadcrumbButton.cs" />
+    <Compile Include="Sbn.Controls.AdvancedControls.AddressBar\BreadcrumbItem.cs" />
+    <Compile Include="Sbn.Controls.AdvancedControls.AddressBar\BreadcrumbItemEventArgs.cs" />
+    <Compile Include="Sbn.Controls.AdvancedControls.AddressBar\BreadcrumbItemEventHandler.cs" />
+    <Compile Include="Sbn.Controls.AdvancedControls.AddressBar\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sbn.Controls.AdvancedControls.AddressBar\PathConversionEventArgs.cs" />
+    <Compile Include="Sbn.Controls.AdvancedControls.AddressBar\PathConversionEventHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sbn.Controls.AdvancedControls.AddressBar.Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="themes\generic.xaml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

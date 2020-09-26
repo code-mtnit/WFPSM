@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{A6039AA4-49BA-41B9-B69D-1ADDC17A1C49}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SBNScan</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GdiPlusLib\Gdip.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sbn.AdvancedControls.Imaging.Scan.Properties\Resources.cs" />
+    <Compile Include="Sbn.AdvancedControls.Imaging.Scan.Properties\Settings.cs" />
+    <Compile Include="Sbn.AdvancedControls.Imaging.Scan\BITMAPINFO.cs" />
+    <Compile Include="Sbn.AdvancedControls.Imaging.Scan\BITMAPINFOHEADER.cs" />
+    <Compile Include="Sbn.AdvancedControls.Imaging.Scan\ImageEvent.cs" />
+    <Compile Include="Sbn.AdvancedControls.Imaging.Scan\ucScanImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TwainLib\Twain.cs" />
+    <Compile Include="TwainLib\TwainCommand.cs" />
+    <Compile Include="TwainLib\TwCap.cs" />
+    <Compile Include="TwainLib\TwCapability.cs" />
+    <Compile Include="TwainLib\TwCC.cs" />
+    <Compile Include="TwainLib\TwDAT.cs" />
+    <Compile Include="TwainLib\TwDG.cs" />
+    <Compile Include="TwainLib\TwEvent.cs" />
+    <Compile Include="TwainLib\TwFix32.cs" />
+    <Compile Include="TwainLib\TwIdentity.cs" />
+    <Compile Include="TwainLib\TwImageInfo.cs" />
+    <Compile Include="TwainLib\TwMSG.cs" />
+    <Compile Include="TwainLib\TwOn.cs" />
+    <Compile Include="TwainLib\TwPendingXfers.cs" />
+    <Compile Include="TwainLib\TwProtocol.cs" />
+    <Compile Include="TwainLib\TwRC.cs" />
+    <Compile Include="TwainLib\TwStatus.cs" />
+    <Compile Include="TwainLib\TwType.cs" />
+    <Compile Include="TwainLib\TwUserInterface.cs" />
+    <Compile Include="TwainLib\TwVersion.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
