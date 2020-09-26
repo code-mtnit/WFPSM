@@ -37,9 +37,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Hatefnet.Products.Controls.Magnifier, Version=1.87.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Hatefnet.Products.Controls.Magnifier.dll</HintPath>
+    <Reference Include="Hatefnet.Products.Controls.Magnifier">
+      <HintPath>..\Libs\Hatefnet.Products.Controls.Magnifier.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Ink, Version=6.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -50,7 +49,7 @@
       <HintPath>C:\Sayban\References\Tablet PC\Microsoft.Ink.resources.dll</HintPath>
     </Reference>
     <Reference Include="Popup">
-      <HintPath>..\..\lib\Popup.dll</HintPath>
+      <HintPath>..\Libs\Popup.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
