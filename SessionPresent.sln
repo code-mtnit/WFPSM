@@ -55,8 +55,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocX", "WordControlDocument
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetDocText", "WordControlDocument2007\GetWordTextSrc\GetDocText.csproj", "{AE0B2BE2-7234-4AE9-8278-A050F4467332}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionPresent", "SessionPresent\SessionPresent.csproj", "{2975E13D-6D46-4608-AE9B-C250E8C5F66A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -167,10 +165,6 @@ Global
 		{AE0B2BE2-7234-4AE9-8278-A050F4467332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE0B2BE2-7234-4AE9-8278-A050F4467332}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE0B2BE2-7234-4AE9-8278-A050F4467332}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2975E13D-6D46-4608-AE9B-C250E8C5F66A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2975E13D-6D46-4608-AE9B-C250E8C5F66A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2975E13D-6D46-4608-AE9B-C250E8C5F66A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2975E13D-6D46-4608-AE9B-C250E8C5F66A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
