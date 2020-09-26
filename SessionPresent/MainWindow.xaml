@@ -1,0 +1,157 @@
+﻿<Controls:MetroWindow x:Class="SessionPresent.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+                      xmlns:ms="clr-namespace:MahApps.Metro;assembly=MahApps.Metro"
+                      xmlns:local="clr-namespace:SessionPresent"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      Title="MahApps.Metro - Demo Application"
+                      Width="960"
+                      Height="600"
+                      Dialog:DialogParticipation.Register="{Binding}"
+                      d:DataContext="{d:DesignInstance local:MainViewModel}"
+                      d:DesignHeight="600"
+                      d:DesignWidth="800"
+                      FlowDirection="RightToLeft"
+                      Closing="MetroWindow_Closing"
+                      GlowBrush="{DynamicResource AccentColorBrush}"
+                      Icon="fountain_pen.ico"
+                      NonActiveGlowBrush="#CDFF0000"
+                      ShowIconOnTitleBar="True"
+                      ShowTitleBar="{Binding ShowMyTitleBar, Mode=OneWay}"
+                      WindowStartupLocation="CenterScreen"
+                      mc:Ignorable="d"
+                      >
+    <!--
+        if using DialogParticipation on Windows which open/close frequently you will get a
+        memory leak unless you unregister.  The easiest way to do this is in your Closing/Unloaded
+        event, as so:
+        
+        DialogParticipation.SetRegister(this, null);
+    -->
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatSlider.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Ellipse x:Key="AppThemeMenuIcon"
+                     Width="16"
+                     Height="16"
+                     x:Shared="False"
+                     Fill="{Binding ColorBrush, Mode=OneWay}"
+                     Stroke="{Binding BorderColorBrush, Mode=OneWay}"
+                     StrokeThickness="1" />
+            <Ellipse x:Key="AccentMenuIcon"
+                     Width="16"
+                     Height="16"
+                     x:Shared="False"
+                     Fill="{Binding ColorBrush, Mode=OneWay}" />
+
+            <Style x:Key="AppThemeMenuItemStyle"
+                   BasedOn="{StaticResource MetroMenuItem}"
+                   TargetType="{x:Type MenuItem}">
+                <Setter Property="Command" Value="{Binding ChangeAccentCommand}" />
+                <Setter Property="Header" Value="{Binding Name, Mode=OneWay}" />
+                <Setter Property="Icon" Value="{StaticResource AppThemeMenuIcon}" />
+            </Style>
+
+            <Style x:Key="AccentColorMenuItemStyle"
+                   BasedOn="{StaticResource MetroMenuItem}"
+                   TargetType="{x:Type MenuItem}">
+                <Setter Property="Command" Value="{Binding ChangeAccentCommand}" />
+                <Setter Property="Header" Value="{Binding Name, Mode=OneWay}" />
+                <Setter Property="Icon" Value="{StaticResource AccentMenuIcon}" />
+            </Style>
+
+            <Dialog:CustomDialog x:Key="CustomDialogTest"
+                                 x:Name="CustomTestDialog"
+                                 Title="This dialog allows arbitrary content.">
+                <TextBlock x:Name="MessageTextBlock"
+                           Height="200"
+                           Foreground="{DynamicResource AccentColorBrush}"
+                           Text="{Binding Artists[0].Name}" />
+            </Dialog:CustomDialog>
+
+            <Dialog:CustomDialog x:Key="CustomCloseDialogTest"
+                                 x:Name="CustomCloseDialogTest"
+                                 Title="Custom Dialog which is awaitable">
+
+                <StackPanel>
+                    <TextBlock Height="30"
+                               Foreground="{DynamicResource AccentColorBrush}"
+                               Text="This dialog allows arbitrary content. You have to close it yourself by clicking the close button below."
+                               TextWrapping="Wrap" />
+                    <Button Click="CloseCustomDialog" Content="Close Me!" />
+                </StackPanel>
+
+            </Dialog:CustomDialog>
+
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Controls:MetroWindow.WindowButtonCommands>
+        <Controls:WindowButtonCommands Template="{DynamicResource MahApps.Metro.Templates.WindowButtonCommands.Win10}" />
+    </Controls:MetroWindow.WindowButtonCommands>
+
+    <Controls:MetroWindow.LeftWindowCommands>
+        <Controls:WindowCommands>
+            <Button Click="LaunchMahAppsOnGitHub" ToolTip="MahApps.Metro on GitHub">
+                <iconPacks:PackIconModern Width="22"
+                                          Height="22"
+                                          Kind="SocialGithubOctocat" />
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.LeftWindowCommands>
+
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands ShowLastSeparator="False">
+            <Button Click="LaunchVisualStudioDemo"
+                    Content="VS"
+                    ToolTip="Visual Studio style demo" />
+            <Button Click="LaunchFlyoutDemo"
+                    Content="Flyouts"
+                    ToolTip="Flyouts demo window" />
+            <Button Click="LaunchIcons"
+                    Content="Icons"
+                    ToolTip="All MahApp icons" />
+            <Button Click="LauchCleanDemo"
+                    Content="Clean"
+                    ToolTip="Clean window style demo" />
+            <Button Click="InteropDemo"
+                    Content="Interop"
+                    ToolTip="The interop demo" />
+            <Button Click="LaunchNavigationDemo"
+                    Content="Navigation"
+                    ToolTip="Window navigation demo" />
+            <ToggleButton x:Name="MagicToggleButton"
+                          Content="ToggleButton"
+                          IsChecked="{Binding MagicToggleButtonIsChecked}"
+                          ToolTip="Shows the toggle button magic" />
+            <ToggleButton Content="Confirm quit"
+                          IsChecked="{Binding QuitConfirmationEnabled}"
+                          ToolTip="Enable quit confirmation dialog on exit" />
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StatusBar Grid.Row="2">
+            <StatusBarItem>MahApps.Metro DEMO Application</StatusBarItem>
+            <Separator Style="{StaticResource MetroStatusBarSeparator}" />
+            <StatusBarItem>Selected Tab:</StatusBarItem>
+            <StatusBarItem Content="{Binding ElementName=MainTabControl, Path=SelectedItem.Header, Mode=OneWay}" />
+        </StatusBar>
+
+    </Grid>
+</Controls:MetroWindow>
+

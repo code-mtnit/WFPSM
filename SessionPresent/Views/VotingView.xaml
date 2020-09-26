@@ -1,0 +1,41 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:SessionPresent.Views"
+        xmlns:viewModel="clr-namespace:SessionPresent.ViewModel"
+        xmlns:Converters="clr-namespace:SessionPresent.Tools.Converters" x:Class="SessionPresent.Views.VotingView"
+        mc:Ignorable="d"
+        Title="فرآیند رای گیری" Height="500" Width="800" d:DataContext="{d:DesignInstance {x:Type viewModel:VotingViewModel}}">
+    <Window.Resources>
+        <Converters:FlowDocumentToXamlConverter x:Key="FlowDocumentToXamlConverter"/>
+    </Window.Resources>
+    <Grid FlowDirection="RightToLeft">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="541*"/>
+            <ColumnDefinition Width="251*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Column="0" Header="موضوع رای گیری ">
+            <FlowDocumentReader Document="{Binding CurrentModel.VotingSubject, Converter={StaticResource FlowDocumentToXamlConverter}}"/>
+        </GroupBox>
+
+        <Grid Grid.Column="1" FlowDirection="RightToLeft" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <DockPanel>
+                <DockPanel Width="250" DockPanel.Dock="Right">
+                    <Button Content="آغاز رای گیری" Margin="20" Command="{Binding StartVotingCommand}"/>
+                    <Button Content="پایان رای گیری" Margin="20"/>
+                </DockPanel>
+                
+            </DockPanel>
+            <GroupBox Grid.Row="1" Header="نتیجه رای گیری " ></GroupBox>
+
+
+        </Grid>
+    </Grid>
+</Window>

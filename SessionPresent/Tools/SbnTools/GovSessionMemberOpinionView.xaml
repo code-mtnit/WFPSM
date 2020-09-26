@@ -1,0 +1,86 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sbnTools="clr-namespace:SessionPresent.Tools.SbnTools"
+        xmlns:Converters="clr-namespace:SessionPresent.Tools.Converters"
+        xmlns:model="clr-namespace:SessionPresent.Model"
+        x:Class="SessionPresent.Tools.SbnTools.GovSessionMemberOpinionView"
+        mc:Ignorable="d"
+        Title="GovSessionMemberOpinionView" Height="500" Width="900" d:DataContext="{d:DesignInstance {x:Type sbnTools:GovSessionMemberOpinionViewModel}}">
+    <Window.Resources>
+        <Converters:EnumBooleanConverter x:Key="EnumBooleanConverter"/>
+    </Window.Resources>
+    <Grid FlowDirection="RightToLeft">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="170"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Grid.Column="0" Header="اطلاعات شخص رای دهنده ">
+                <StackPanel>
+                    <TextBlock Text="{Binding CurrentModel.CorrelateSessionMember.Title}"></TextBlock>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="موضوع رای گیری " Grid.Column="1">
+                <DockPanel>
+
+                    <DockPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+                        <TextBlock DockPanel.Dock="Right" Text="{Binding CurrentModel.CorrelateOffer.OfficialCode}"/>
+                        <TextBlock DockPanel.Dock="Right" Text="کد پیشنهاد : "/>
+                        <TextBlock Text="پیشنهاد دهنده : "/>
+                        <TextBlock Text="{Binding CurrentModel.CorrelateOffer.OwnerOrgan.CorrelateOrgUnit.Title}" TextWrapping="Wrap"/>
+                    </DockPanel>
+                    <TextBlock Text="{Binding CurrentModel.CorrelateOffer.Title}" FontFamily="B Nazanin" FontSize="16"/>
+                </DockPanel>
+
+
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type RadioButton}">
+                        <Setter Property="FontFamily" Value="B Nazanin"/>
+                        <Setter Property="FontSize" Value="30"/>
+                    </Style>
+                    <ControlTemplate TargetType="{x:Type RadioButton}" x:Key="Template1">
+                        <StackPanel Orientation="Horizontal" Margin="{TemplateBinding Padding}">
+                            <Border x:Name="CheckBorder" BorderThickness="3" Width="35" Height="35" BorderBrush="Black" Margin="10">
+                                <Rectangle x:Name="CheckMark" Fill="Green" Width="20" Height="20" Visibility="Collapsed"></Rectangle>
+                            </Border>
+                            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </StackPanel.Resources>
+                <RadioButton Content="موافق" Template="{StaticResource Template1}" IsChecked="{Binding OpinionType, Converter={StaticResource EnumBooleanConverter},ConverterParameter={x:Static model:OpinionType.Agree},Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                  
+                </RadioButton>
+                <RadioButton Content="مخالف" Template="{StaticResource Template1}" IsChecked="{Binding OpinionType, Converter={StaticResource EnumBooleanConverter},ConverterParameter={x:Static model:OpinionType.DisAgree},Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <!--<RadioButton Content="موافق مشروط" IsChecked="{Binding OpinionType, Converter={StaticResource EnumBooleanConverter},ConverterParameter={x:Static sbnTools:OpinionType.AgreeWithParam},Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>-->
+                <RadioButton Content="ممتنع" Template="{StaticResource Template1}" IsChecked="{Binding OpinionType, Converter={StaticResource EnumBooleanConverter},ConverterParameter={x:Static model:OpinionType.NoneIdea},Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+
+
+            </StackPanel>
+
+        </Grid>
+        <Button Grid.Row="2" Background="DarkSeaGreen" Command="{Binding SaveCommand}"  Content="تأیید" />
+    </Grid>
+</Window>

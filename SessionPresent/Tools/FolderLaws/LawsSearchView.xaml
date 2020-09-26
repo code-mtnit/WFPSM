@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="SessionPresent.Tools.FolderLaws.LawsSearchView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:lawFodler="clr-namespace:SessionPresent.Tools.FolderLaws" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" Background="White">
+    <UserControl.Resources>
+        <lawFodler:LawsSearchViewModel x:Key="CurrentViewModel"/>
+    </UserControl.Resources>
+    <!--<UserControl.DataContext>
+        <Binding Source="{StaticResource CurrentViewModel}"/>
+    </UserControl.DataContext>-->
+    <Grid FlowDirection="RightToLeft" Background="#FF415DA8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85" />            
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" >
+            <TextBlock  Text="{Binding Title}"  HorizontalAlignment="Center" FontFamily="B Nazanin" FontSize="40" TextAlignment="Center"  Height="60" Foreground="White" />                       
+        </DockPanel>
+
+        <ListView Grid.Row="1" FlowDirection="RightToLeft" Name="lsvDocs" ScrollViewer.VerticalScrollBarVisibility="Disabled"  FontFamily="B Nazanin" FontSize="18" FontWeight="Bold" ItemsSource="{Binding Children}" SelectionChanged="ListView_SelectionChanged" Background="White" >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="10" >                       
+                        <StackPanel Orientation="Horizontal" Cursor="Hand">
+                            <Image Source="/SessionPresent;component/Images/Report.png" Margin="5" Width="30" Height="30"/>
+                            <TextBlock Text="{Binding Title}" Foreground="Blue" TextDecorations="Underline" Cursor="Hand"/>
+                        </StackPanel>
+                        
+                        <!--<WrapPanel>
+                        <Image Source="/SessionPresent;component/Images/Report.png" Margin="5" />
+                       
+                        </WrapPanel>-->
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <lawFodler:LawView Grid.Row="2" x:Name="DocViewer" Visibility="Collapsed"/>
+
+    </Grid>
+</UserControl>

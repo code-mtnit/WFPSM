@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="SessionPresent.Views.GovSessionDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:SessionPresent"
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+            xmlns:Converters="clr-namespace:SessionPresent.Tools.Converters"
+             d:DataContext="{d:DesignInstance local:MainViewModel}"
+             mc:Ignorable="d" d:DesignWidth="1045.564" d:DesignHeight="460.977"
+             Background="#FFACD5DE">
+    <!--xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"-->
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            
+            <local:MainViewModel x:Key="CurrentViewModel"/>
+            
+            <Style x:Key="LargeTileStyle" TargetType="Controls:Tile">
+                <Setter Property="Height" Value="200" />
+                <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+                <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
+            </Style>
+
+            <Style x:Key="SmallTileStyle" TargetType="Controls:Tile">
+                <Setter Property="Height" Value="125" />
+                <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+                <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
+                <Setter Property="TitleFontSize" Value="10" />
+                <!--<Setter Property="Width" Value="147" />-->
+            </Style>
+            <Converters:ColorNameToSolidBrushConverter x:Key="ColorNameToSolidBrushConverter"/>
+            <Converters:ItemWidthConverter x:Key="ItemWidthConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="160" />
+            </Grid.RowDefinitions>
+            
+            <TextBlock x:Name="textBlock" Grid.Row="0" Height="150"  TextWrapping="Wrap" Text="{Binding MainTitle, Mode=TwoWay}" VerticalAlignment="Top"  Foreground="Black"  Margin="0,10,0,0" TextAlignment="Center" FontFamily="B Titr" FontSize="30"/>
+
+            <ListView  Grid.Row="1" Name="lsvExternalTools" Background="{x:Null}" ItemsSource="{Binding Children}" SelectionChanged="lsvSessions_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,15,0,0">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,0"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Controls:Tile Title="{Binding Title}"
+                               FontFamily="B Nazanin"
+                               Margin="3"
+                               Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}"
+                               Background="{Binding Path=BackColor , Converter= {StaticResource ColorNameToSolidBrushConverter}}"
+                               Width="{Binding Path=ItemWidth , Converter= {StaticResource ItemWidthConverter}}"
+                               HorizontalTitleAlignment="Center"
+                               TitleFontSize="24"
+                               TextBlock.TextAlignment="Center"
+                                       TextBlock.FontWeight="Bold"
+                               Click="Tile_Click"
+                               Style="{StaticResource LargeTileStyle}" >
+                            <iconPacks:PackIconModern Width="40"
+                                              Height="40"
+                                              Kind="{Binding ItemIcon}" />
+                        </Controls:Tile>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <TextBlock x:Name="textMessage" Grid.Row="2" Height="150"  TextWrapping="Wrap" Text="{Binding MessageTitle, Mode=TwoWay}" VerticalAlignment="Top"  Foreground="Black"  Margin="10,0,10,0" TextAlignment="Left" FontFamily="B Zar" FontWeight="Bold" FontSize="20"/>
+            <TextBlock x:Name="textVersion" Grid.Row="2" Height="24"  TextWrapping="NoWrap" Text="{Binding Version}" VerticalAlignment="Bottom"  Foreground="Black"  Margin="20,20,0,0" TextAlignment="Right" FontFamily="B Nazanin" FontWeight="Bold" FontSize="20"/>
+
+        </Grid>
+    </ScrollViewer>
+</UserControl>

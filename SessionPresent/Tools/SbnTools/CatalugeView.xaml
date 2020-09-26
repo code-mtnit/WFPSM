@@ -1,0 +1,226 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Tools="clr-namespace:SessionPresent.Tools" x:Name="userControl" 
+             x:Class="SessionPresent.Tools.SbnTools.CatalugeView" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="1000"  Background="#FFD0E685"
+    Style="{x:Null}">
+    <UserControl.Resources>
+
+        <Tools:VisiblityToBooleanConverter x:Key="VisiblityToBooleanConverter"/>
+
+
+    </UserControl.Resources>
+
+
+    <Grid >
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.Effect>
+                <DropShadowEffect Opacity="0.5"/>
+            </Grid.Effect>
+            <Image Grid.Column="0" Source="/SessionPresent;component/Images/Office.Png" Margin="25,25,25,0" />
+
+            <StackPanel Grid.Column="1" Width="180">
+                <Image  Source="/SessionPresent;component/Images/Allah0.png" Margin="5,5,0,0" Width="60" />
+                <Image  Source="/SessionPresent;component/Images/Gov.png" Margin="5,5,5,10" />
+
+            </StackPanel>
+            <Image Grid.Column="2" Source="/SessionPresent;component/Images/Kartable.Png" Margin="5,25,5,0" />
+        </Grid>
+        <Image Grid.Row="1" HorizontalAlignment="Left" Source="/SessionPresent;component/Images/Pencil.png" Width="24" Height="24" Stretch="Fill" Visibility="{Binding IsSessionManager, Converter={StaticResource VisiblityToBooleanConverter},Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, ElementName=userControl}" Margin="0,0,0,0"></Image>
+        <TextBlock Grid.Row="1"  Text="{Binding Title}" Background="White" Margin="20,0,20,0" FontFamily="B Nazanin" FontSize="16" FontWeight="Bold">
+            
+        </TextBlock>
+
+        <DataGrid Grid.Row="2" Margin="20,5,20,10" RowHeaderWidth="0" Background="White" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" FlowDirection="RightToLeft" x:Name="lsvOffers" ItemsSource="{Binding Children}" SelectionChanged="ListView_SelectionChanged" FontFamily="B Nazanin" FontSize="18" GridLinesVisibility="Horizontal" 
+                 Style="{x:Null}" BorderBrush="{x:Null}" HorizontalGridLinesBrush="#FFA4B0DA">
+            <DataGrid.Resources>
+                <ContextMenu x:Key="cmsMain" >
+                    <MenuItem Header="ویرایش" x:Name="mnuItmEdit" Click="mnuItmEdit_Click" Visibility="{Binding IsSessionManager, Converter={StaticResource VisiblityToBooleanConverter},Mode=OneWay,UpdateSourceTrigger=PropertyChanged, ElementName=userControl}"/>
+                </ContextMenu>
+            </DataGrid.Resources>
+            <DataGrid.ItemContainerStyle >
+                <!--<Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>-->
+                <Style TargetType="{x:Type DataGridRow}"  >
+                    <Setter Property="ContextMenu" Value="{StaticResource ResourceKey=cmsMain}"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <EventSetter Event="UIElement.PreviewMouseLeftButtonDown" Handler="lsvOffers_MouseLeftButtonDown"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type DataGridRow}">
+                                <Border x:Name="DGR_Border"
+					        BorderBrush="{TemplateBinding BorderBrush}"
+					        BorderThickness="{TemplateBinding BorderThickness}"
+					        SnapsToDevicePixels="True">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Offset="0" Color="White" />
+                                            <GradientStop Offset="1" Color="White" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal" />
+                                            <VisualState x:Name="Normal_AlternatingRow">
+                                                <Storyboard>
+                                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="DGR_Border" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                                        <EasingColorKeyFrame KeyTime="0" Value="#AAF0C570" />
+                                                    </ColorAnimationUsingKeyFrames>
+                                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="DGR_Border" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                                        <EasingColorKeyFrame KeyTime="0" Value="#AAFF7F00" />
+                                                    </ColorAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Normal_Selected">
+                                                <Storyboard>
+                                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="DGR_Border" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                                        <EasingColorKeyFrame KeyTime="0" Value="#CCAA0000" />
+                                                    </ColorAnimationUsingKeyFrames>
+                                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="DGR_Border" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                                        <EasingColorKeyFrame KeyTime="0" Value="#77D52B00" />
+                                                    </ColorAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="MouseOver">
+                                                <Storyboard>
+                                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="DGR_Border" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                                        <EasingColorKeyFrame KeyTime="0" Value="#FFA6B8D8" />
+                                                    </ColorAnimationUsingKeyFrames>
+                                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="DGR_Border" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                                        <EasingColorKeyFrame KeyTime="0" Value="#FFA6B8D8" />
+                                                    </ColorAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <SelectiveScrollingGrid>
+                                        <SelectiveScrollingGrid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </SelectiveScrollingGrid.ColumnDefinitions>
+                                        <SelectiveScrollingGrid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
+                                        </SelectiveScrollingGrid.RowDefinitions>
+                                        <DataGridCellsPresenter Grid.Column="1"
+							                        ItemsPanel="{TemplateBinding ItemsPanel}"
+							                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                        <DataGridDetailsPresenter Grid.Row="1"
+							                          Grid.Column="1"
+							                          SelectiveScrollingGrid.SelectiveScrollingOrientation="{Binding AreRowDetailsFrozen,
+							                                                                                         ConverterParameter={x:Static SelectiveScrollingOrientation.Vertical},
+							                                                                                         Converter={x:Static DataGrid.RowDetailsScrollingConverter},
+							                                                                                         RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+							                          Visibility="{TemplateBinding DetailsVisibility}" />
+                                        <DataGridRowHeader Grid.RowSpan="2"
+							                   SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"
+							                   Visibility="{Binding HeadersVisibility,
+							                                        ConverterParameter={x:Static DataGridHeadersVisibility.Row},
+							                                        Converter={x:Static DataGrid.HeadersVisibilityConverter},
+							                                        RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                                    </SelectiveScrollingGrid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Border BorderBrush="#FFA4B0DA" BorderThickness="0,0,0,1">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="White" Offset="1"/>
+                                                <GradientStop Color="#FFD0E685"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <TextBlock Text="{Binding}" FontFamily="B Nazanin" FontSize="16" Margin="2"/>
+                                        <!--<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}"  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />-->
+
+                                    </Border>
+                                </Grid>
+
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn Header="ردیف" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Object.OrderInCatalogue}" Margin="20,10" TextAlignment="Center" HorizontalAlignment="Center"  VerticalAlignment="Center" FontWeight="Bold"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="پیشنهاد دهنده" MaxWidth="300" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Object.OwnerOrgan.CorrelateOrgUnit.Title}" TextWrapping="Wrap"  Margin="10" FontWeight="Bold"  VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="عنوان"  Width="*" FrameworkElement.FlowDirection="RightToLeft">
+
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Object.Title}"  TextWrapping="Wrap" FontWeight="Bold" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="کد"  >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Object.OfficialCode}" Margin="5,10"  VerticalAlignment="Center" FontWeight="Bold"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="فوریت" Width="100" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Object.Urgency}" Margin="10"  VerticalAlignment="Center" FontWeight="Bold"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="واحد رسیدگی کننده" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Object.ActiveCommission.CorrelateCommission.Title}" TextWrapping="Wrap"  Margin="10" MaxWidth="300"  FontWeight="Bold"  VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

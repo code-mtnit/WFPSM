@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SessionPresent.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TimeToWait" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="PresenterPort" Type="System.Int64" Scope="Application">
+      <Value Profile="(Default)">11000</Value>
+    </Setting>
+    <Setting Name="PresenterIP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10.0.142.34</Value>
+    </Setting>
+    <Setting Name="IsAdmin" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OtherDocsPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">I:\govFiles\Docs</Value>
+    </Setting>
+    <Setting Name="DefaultPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Sayban\Govern</Value>
+    </Setting>
+    <Setting Name="Version" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">نسخه پاییز 98</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

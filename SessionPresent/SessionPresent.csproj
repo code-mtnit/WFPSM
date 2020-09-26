@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2975E13D-6D46-4608-AE9B-C250E8C5F66A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SessionPresent</RootNamespace>
+    <AssemblyName>SessionPresent</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\Sayban\DebugVersions\Products\GEP\SessionPresent\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>open-book.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WPF4">
+      <HintPath>..\..\lib\GalaSoft.MvvmLight.Extras.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WPF4">
+      <HintPath>..\..\lib\GalaSoft.MvvmLight.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="Hatefnet.Products.Controls.Magnifier">
+      <HintPath>..\..\lib\Hatefnet.Products.Controls.Magnifier.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MSXML2">
+      <HintPath>..\Sbn.Libs.XMLPareser\bin\Debug\Interop.MSXML2.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="JetBrains.Annotations">
+      <HintPath>..\..\lib\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\..\lib\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.IconPacks">
+      <HintPath>..\..\lib\MahApps.Metro.IconPacks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NHotkey">
+      <HintPath>..\..\lib\NHotkey.dll</HintPath>
+    </Reference>
+    <Reference Include="NHotkey.Wpf">
+      <HintPath>..\..\lib\NHotkey.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="frmClientsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientsList.designer.cs">
+      <DependentUpon>frmClientsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewClient.designer.cs">
+      <DependentUpon>frmNewClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="govGreattingMessage.xaml.cs">
+      <DependentUpon>govGreattingMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Ballot.cs" />
+    <Compile Include="Model\Session.cs" />
+    <Compile Include="Model\SessionUser.cs" />
+    <Compile Include="Model\Voting.cs" />
+    <Compile Include="Monitoring.xaml.cs">
+      <DependentUpon>Monitoring.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SCUtility.cs" />
+    <Compile Include="SimpleCommand.cs" />
+    <Compile Include="TaskEx.cs" />
+    <Compile Include="Tools\Converters\ColorNameToSolidBrushConverter.cs" />
+    <Compile Include="Tools\Converters\FlowDocumentToXamlConverter.cs" />
+    <Compile Include="Tools\ISessionUser.cs" />
+    <Compile Include="Tools\SbnTools\frmEditGovSessionInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SbnTools\frmEditGovSessionInfo.Designer.cs">
+      <DependentUpon>frmEditGovSessionInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SbnTools\frmSendMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SbnTools\frmSendMessage.Designer.cs">
+      <DependentUpon>frmSendMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SbnTools\frmSessionTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SbnTools\frmSessionTitle.Designer.cs">
+      <DependentUpon>frmSessionTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SbnTools\frmSessionOrderItemInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SbnTools\frmSessionOrderItemInfo.Designer.cs">
+      <DependentUpon>frmSessionOrderItemInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SbnTools\frmSplashMessageView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SbnTools\frmSplashMessageView.Designer.cs">
+      <DependentUpon>frmSplashMessageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AuthenticateViewModel.cs" />
+    <Compile Include="ViewModel\SessionItemViewModel.cs" />
+    <Compile Include="Tools\ApplicationDefinitions.cs" />
+    <Compile Include="Tools\ColumnDefinitionExtended.cs" />
+    <Compile Include="Tools\Converters\EnumBooleanConverter.cs" />
+    <Compile Include="Tools\Converters\TreeViewItemWidthConverter.cs" />
+    <Compile Include="Tools\Converters\TypeValueConverter.cs" />
+    <Compile Include="Tools\FolderLaws\LawsSearchView.xaml.cs">
+      <DependentUpon>LawsSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FolderLaws\LawsSearchViewModel.cs" />
+    <Compile Include="Tools\FolderLaws\LawView.xaml.cs">
+      <DependentUpon>LawView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\History.cs" />
+    <Compile Include="Tools\IBallotViewer.cs" />
+    <Compile Include="Tools\ISessionItemViewer.cs" />
+    <Compile Include="Tools\IVotingViewModel.cs" />
+    <Compile Include="Tools\SbnTools\CatalugeView.xaml.cs">
+      <DependentUpon>CatalugeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SbnTools\frmEditOfferInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SbnTools\frmEditOfferInfo.Designer.cs">
+      <DependentUpon>frmEditOfferInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SbnTools\GovSessionMemberOpinionView.xaml.cs">
+      <DependentUpon>GovSessionMemberOpinionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SbnTools\GovSessionMemberOpinionViewModel.cs" />
+    <Compile Include="Tools\SbnTools\GovSessionOrderView.xaml.cs">
+      <DependentUpon>GovSessionOrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SbnTools\OfferView.xaml.cs">
+      <DependentUpon>OfferView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OpinionType.cs" />
+    <Compile Include="Tools\SbnTools\PresentationView.xaml.cs">
+      <DependentUpon>PresentationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SbnTools\SbnObjectTools.cs" />
+    <Compile Include="Tools\SbnTools\SessionItemEventArgs.cs" />
+    <Compile Include="Tools\SbnTools\ucViewGovReportPic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\SbnTools\ucViewGovReportPic.designer.cs">
+      <DependentUpon>ucViewGovReportPic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SbnTools\ucViewGovReportTabTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\SbnTools\ucViewGovReportTabTemplate.designer.cs">
+      <DependentUpon>ucViewGovReportTabTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SbnTools\ucViewPresentationPic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\SbnTools\ucViewPresentationPic.designer.cs">
+      <DependentUpon>ucViewPresentationPic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SbnTools\ucWordDocEntityProp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\SbnTools\ucWordDocEntityProp.designer.cs">
+      <DependentUpon>ucWordDocEntityProp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\TreeViewItemViewModel.cs" />
+    <Compile Include="Tools\Converters\VisiblityToBooleanConverter.cs" />
+    <Compile Include="ViewModel\BallotViewModel.cs" />
+    <Compile Include="ViewModel\SessionUserViewModel.cs" />
+    <Compile Include="ViewModel\VotingViewModel.cs" />
+    <Compile Include="Views\AuthenticateView.xaml.cs">
+      <DependentUpon>AuthenticateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DesktopView.xaml.cs">
+      <DependentUpon>DesktopView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BallotRegisterView.xaml.cs">
+      <DependentUpon>BallotRegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GovSessionDashboard.xaml.cs">
+      <DependentUpon>GovSessionDashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SessionToolBarView.xaml.cs">
+      <DependentUpon>SessionToolBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VotingView.xaml.cs">
+      <DependentUpon>VotingView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="govGreattingMessage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindowold.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindowold.xaml.cs">
+      <DependentUpon>MainWindowold.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Monitoring.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\FolderLaws\LawsSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\FolderLaws\LawView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\SbnTools\CatalugeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\SbnTools\GovSessionMemberOpinionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\SbnTools\GovSessionOrderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\SbnTools\OfferView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\SbnTools\PresentationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AuthenticateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DesktopView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BallotRegisterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GovSessionDashboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SessionToolBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VotingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="frmClientsList.resx">
+      <DependentUpon>frmClientsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewClient.resx">
+      <DependentUpon>frmNewClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SbnTools\frmEditGovSessionInfo.resx">
+      <DependentUpon>frmEditGovSessionInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SbnTools\frmEditOfferInfo.resx">
+      <DependentUpon>frmEditOfferInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SbnTools\frmSendMessage.resx">
+      <DependentUpon>frmSendMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SbnTools\frmSessionTitle.resx">
+      <DependentUpon>frmSessionTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SbnTools\frmSessionOrderItemInfo.resx">
+      <DependentUpon>frmSessionOrderItemInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SbnTools\frmSplashMessageView.resx">
+      <DependentUpon>frmSplashMessageView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SbnTools\ucViewGovReportPic.resx">
+      <DependentUpon>ucViewGovReportPic.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SbnTools\ucViewGovReportTabTemplate.resx">
+      <DependentUpon>ucViewGovReportTabTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SbnTools\ucViewPresentationPic.resx">
+      <DependentUpon>ucViewPresentationPic.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SbnTools\ucWordDocEntityProp.resx">
+      <DependentUpon>ucWordDocEntityProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Desktop_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\back.png" />
+    <Resource Include="Images\catalog32.png" />
+    <Resource Include="Images\delete3.png" />
+    <Resource Include="Images\emblem-web.png" />
+    <Resource Include="Images\folder-horizontal-open.png" />
+    <Resource Include="Images\logout32.png" />
+    <Resource Include="Images\next.png" />
+    <Resource Include="Images\refresh2.png" />
+    <Resource Include="Images\Report.png" />
+    <Resource Include="Images\report32.png" />
+    <Resource Include="Images\Sync.png" />
+    <Resource Include="Images\Users32.png" />
+    <Resource Include="Images\Web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Desktop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Allah3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="fountain_pen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Office.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Allah0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Kartable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arrow_left_alt1_32x32.png" />
+    <Resource Include="Images\arrow_right_alt1_32x32.png" />
+    <Resource Include="Images\arrow_up_32x32.png" />
+    <Resource Include="Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataLayer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BaseClass\BaseClass\BaseClass.csproj">
+      <Project>{3c1452af-f8ef-49e6-ad21-4f4c443b471e}</Project>
+      <Name>BaseClass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BreadcrumbBar\WPFBreadcrumb\BreadcrumbBar\AddressBar.Controls.csproj">
+      <Project>{333fdc55-6b47-4a64-a2df-a4c5823fac74}</Project>
+      <Name>AddressBar.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CaptureScreen\CaptureScreen.csproj">
+      <Project>{4a0c393c-2719-41c4-814a-a0b050e52509}</Project>
+      <Name>CaptureScreen</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphicTools\GraphicTools.csproj">
+      <Project>{6d09b7fb-25da-4b54-ad1b-7c6a964b7794}</Project>
+      <Name>GraphicTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetworkRelation\NetworkRelation.csproj">
+      <Project>{03764979-a5f4-4ad9-ac1c-22ef269a355f}</Project>
+      <Name>NetworkRelation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Controls.Imaging.ImagingObject\Sbn.Controls.Imaging.ImagingObject.csproj">
+      <Project>{fc9855d8-d807-4663-9281-a58f91bac642}</Project>
+      <Name>Sbn.Controls.Imaging.ImagingObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.FramWork.Drawing\Sbn.FramWork.Drawing.csproj">
+      <Project>{78bcb00a-3190-45dc-a89c-5f1c71f3fba2}</Project>
+      <Name>Sbn.FramWork.Drawing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Libs.AssemblyTools\Sbn.Libs.AssemblyTools\Sbn.Libs.AssemblyTools.csproj">
+      <Project>{95ec7caa-0c9f-497e-9779-687b0deff64d}</Project>
+      <Name>Sbn.Libs.AssemblyTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Libs.XMLPareser\Sbn.Libs.XMLPareser.csproj">
+      <Project>{04f4ea2f-4d90-4726-ade0-854a63dfe904}</Project>
+      <Name>Sbn.Libs.XMLPareser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Products.GAP.GAPObject\Sbn.Products.GAP.GAPObject\Sbn.Products.GAP.GAPObject.csproj">
+      <Project>{370b3230-6ba4-4cac-ad91-34fc284c8721}</Project>
+      <Name>Sbn.Products.GAP.GAPObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Products.GEP.GEPObject\Sbn.Products.GEP.GEPObject.csproj">
+      <Project>{36597935-f438-483f-80cd-e5bf6bb05282}</Project>
+      <Name>Sbn.Products.GEP.GEPObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Systems.ELS.ELSObject\Sbn.Systems.ELS.ELSObject\Sbn.Systems.ELS.ELSObject.csproj">
+      <Project>{0cd16852-a8b8-4b97-9787-c40d64ec6065}</Project>
+      <Name>Sbn.Systems.ELS.ELSObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Systems.OPS.OPSObject\Sbn.Systems.OPS.OPSObject.csproj">
+      <Project>{902dbc27-bd68-4a7b-977e-d98288575a1a}</Project>
+      <Name>Sbn.Systems.OPS.OPSObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbn.Systems.WMC.WMCObject\Sbn.Systems.WMC.WMCObject.csproj">
+      <Project>{47302fdd-8529-44cf-95d8-8b5259040eca}</Project>
+      <Name>Sbn.Systems.WMC.WMCObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBNCore\SBNCore\SBNCore.csproj">
+      <Project>{121361c1-78a9-43e9-83fa-43d3439b198f}</Project>
+      <Name>SBNCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBNFramWork\Sbn.FramWork.csproj">
+      <Project>{f18b6c11-6c79-465a-a084-aea1c69ecb15}</Project>
+      <Name>Sbn.FramWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBNImageViewer\ImageViewer.csproj">
+      <Project>{ad2da6be-4dad-4bd3-bcf3-9ddd17782fec}</Project>
+      <Name>ImageViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SbnImaging\SbnImaging.csproj">
+      <Project>{8bbb9fd2-2e8a-44f8-8a1e-e1f01b3a57c8}</Project>
+      <Name>SbnImaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SbnPaint\Sbn.Paint.csproj">
+      <Project>{fe53055c-2eac-4a86-98a9-333e3b72a1f4}</Project>
+      <Name>Sbn.Paint</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SBNScan\SBNScan.csproj">
+      <Project>{a6039aa4-49ba-41b9-b69d-1addc17a1c49}</Project>
+      <Name>SBNScan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TCPClientSocket\TCPClientSocket.csproj">
+      <Project>{9ead04b8-c181-4122-86f9-35a74513933c}</Project>
+      <Name>TCPClientSocket</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThumbnailControl\ThumbnailControl.csproj">
+      <Project>{fc66c626-46a1-4750-a972-84f7e96243a7}</Project>
+      <Name>ThumbnailControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WaitForm\WaitForm\WaitForm.csproj">
+      <Project>{aaf56bb9-b215-4251-a820-1b4cf88e7dd0}</Project>
+      <Name>WaitForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WordControlDocument2007\WordDocumentControl\WordControlDocument.csproj">
+      <Project>{323570d9-6750-4d0c-b095-b0e9918a373a}</Project>
+      <Name>WordControlDocument</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\title_window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cartable-Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="open-book.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pencil.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

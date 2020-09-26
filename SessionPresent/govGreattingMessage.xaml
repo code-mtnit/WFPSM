@@ -1,0 +1,51 @@
+﻿<Window x:Name="govGreatingMessage" x:Class="SessionPresent.govGreattingMessage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SessionPresent"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:SessionPresent.ViewModel"
+        d:DataContext="{d:DesignInstance local:MainViewModel}"
+        Title="govGreattingMessage" Height="404.18" Width="978.802" Topmost="True" 
+        WindowStartupLocation="CenterScreen" Closing="Window_Closing" 
+        AllowsTransparency="True" 
+        WindowStyle="None" 
+        Background="White"
+        mc:Ignorable="d" Loaded="govGreatingMessage_Loaded">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard Name="FormFade">
+                    <DoubleAnimation  Name="FormFadeAnimation"
+                                            Storyboard.TargetName="govGreatingMessage" 
+                                            Storyboard.TargetProperty="(Window.Opacity)"
+                                            From="0.0" To="1.0" Duration="0:0:2" 
+                                            AutoReverse="False" RepeatBehavior="1x" 
+                                         />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <!--<Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Duration="0:0:.8" Storyboard.TargetProperty="Left" From="3000" To="0" AccelerationRatio="0.5"></DoubleAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Source="Cartable-Logo.png" Margin="0,0,0,0" MouseDown="Image_MouseDown" Grid.RowSpan="1" ></Image>
+        <WrapPanel Grid.Row="1" RenderTransformOrigin="0.5,0.5" Margin="10,0,10,0" >
+            <Button Content="ورود"  HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" Background="Transparent" BorderThickness="0" BorderBrush="Transparent" FontFamily="B Nazanin" FontSize="20" Width="48" Click="Button_Click"  />
+            <Label x:Name="label" Margin="0" Width="900" HorizontalAlignment="Center" Content="{Binding Description}"  Height="40" FlowDirection="RightToLeft" FontFamily="B Nazanin" FontSize="26" FontStretch="SemiCondensed" FontWeight="Bold"    />
+        </WrapPanel>
+
+    </Grid>
+</Window>
