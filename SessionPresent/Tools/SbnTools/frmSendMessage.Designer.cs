@@ -38,6 +38,8 @@
             this.trcDelay = new System.Windows.Forms.TrackBar();
             this.lblDuration = new System.Windows.Forms.Label();
             this.lblDelay = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trkDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trcDelay)).BeginInit();
             this.SuspendLayout();
@@ -47,9 +49,9 @@
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(135, 154);
+            this.btnCancel.Location = new System.Drawing.Point(122, 173);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 35);
+            this.btnCancel.Size = new System.Drawing.Size(83, 35);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "انصراف";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -59,9 +61,9 @@
             this.btnApplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnApplay.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnApplay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApplay.Location = new System.Drawing.Point(25, 154);
+            this.btnApplay.Location = new System.Drawing.Point(25, 173);
             this.btnApplay.Name = "btnApplay";
-            this.btnApplay.Size = new System.Drawing.Size(104, 35);
+            this.btnApplay.Size = new System.Drawing.Size(91, 35);
             this.btnApplay.TabIndex = 16;
             this.btnApplay.Text = "تأیید";
             this.btnApplay.UseVisualStyleBackColor = true;
@@ -97,6 +99,7 @@
             this.trkDuration.Size = new System.Drawing.Size(238, 45);
             this.trkDuration.SmallChange = 5;
             this.trkDuration.TabIndex = 18;
+            this.trkDuration.Value = 15;
             this.trkDuration.Scroll += new System.EventHandler(this.trkDuration_Scroll);
             // 
             // label1
@@ -129,6 +132,7 @@
             this.trcDelay.Size = new System.Drawing.Size(238, 45);
             this.trcDelay.SmallChange = 5;
             this.trcDelay.TabIndex = 20;
+            this.trcDelay.Value = 15;
             this.trcDelay.Scroll += new System.EventHandler(this.trcDelay_Scroll);
             // 
             // lblDuration
@@ -138,9 +142,9 @@
             this.lblDuration.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDuration.Location = new System.Drawing.Point(405, 127);
             this.lblDuration.Name = "lblDuration";
-            this.lblDuration.Size = new System.Drawing.Size(15, 16);
+            this.lblDuration.Size = new System.Drawing.Size(22, 16);
             this.lblDuration.TabIndex = 22;
-            this.lblDuration.Text = "0";
+            this.lblDuration.Text = "15";
             // 
             // lblDelay
             // 
@@ -149,9 +153,29 @@
             this.lblDelay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDelay.Location = new System.Drawing.Point(403, 182);
             this.lblDelay.Name = "lblDelay";
-            this.lblDelay.Size = new System.Drawing.Size(15, 16);
+            this.lblDelay.Size = new System.Drawing.Size(22, 16);
             this.lblDelay.TabIndex = 23;
-            this.lblDelay.Text = "0";
+            this.lblDelay.Text = "15";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(25, 114);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 29);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "رنگ زمینه";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(121, 115);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(84, 29);
+            this.button2.TabIndex = 25;
+            this.button2.Text = "رنگ متن";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmSendMessage
             // 
@@ -160,6 +184,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(875, 221);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblDelay);
             this.Controls.Add(this.lblDuration);
             this.Controls.Add(this.label3);
@@ -176,6 +202,7 @@
             this.Name = "frmSendMessage";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "ارسال پیام";
+            this.Load += new System.EventHandler(this.frmSendMessage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trkDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trcDelay)).EndInit();
             this.ResumeLayout(false);
@@ -195,5 +222,7 @@
         public System.Windows.Forms.Label lblDelay;
         public System.Windows.Forms.TrackBar trkDuration;
         public System.Windows.Forms.TrackBar trcDelay;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

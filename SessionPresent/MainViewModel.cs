@@ -109,6 +109,28 @@ namespace SessionPresent
             }
         }
 
+        private Color _MessageForeColor = Color.Black;
+        public Color MessageForeColor
+        {
+            get { return _MessageForeColor; }
+            set
+            {
+                _MessageForeColor = value;
+                OnPropertyChanged("MessageForeColor");
+            }
+        }
+
+        private Color _MessageBackColor = Color.White;
+        public Color MessageBackColor
+        {
+            get { return _MessageBackColor; }
+            set
+            {
+                _MessageBackColor = value;
+                OnPropertyChanged("MessageBackColor");
+            }
+        }
+
         bool _IsSessionManager = false;
         public bool IsSessionManager
         {

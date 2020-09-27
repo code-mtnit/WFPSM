@@ -594,27 +594,33 @@ namespace SessionPresent.Views
             if (File.Exists(Properties.Settings.Default.OtherDocsPath + "\\پیامها\\پیام عمومی.txt") && File.ReadAllText(Properties.Settings.Default.OtherDocsPath + "\\پیامها\\پیام عمومی.txt") != "")
             {
                 string[] sText = File.ReadAllText(Properties.Settings.Default.OtherDocsPath + "\\پیامها\\پیام عمومی.txt").Split('#');
-                if(sText.Length >0)
+                if(sText.Length >3)
                 {
                     sMessage = sText[0];
                     frm.txtTitle.Text = sMessage;
                     frm.trcDelay.Value = int.Parse(sText[1]);
                     frm.trkDuration.Value = int.Parse(sText[2]);
-                    frm.lblDelay.Text = sText[1];
-                    frm.lblDuration.Text = sText[2];
+                    if(sText[1] != "0")
+                        frm.lblDelay.Text = sText[1];
+                    if (sText[2] != "0")
+                        frm.lblDuration.Text = sText[2];
+                    if (sText[3] != "")
+                        frm.txtTitle.BackColor =  System.Drawing.Color.FromArgb (int.Parse(sText[3].Substring(sText[3].IndexOf("A=")+2 , 3)) , int.Parse(sText[3].Substring(sText[3].IndexOf("R=")+2, 3)) , int.Parse(sText[3].Substring(sText[3].IndexOf("G="), 3)) , int.Parse(sText[3].Substring(sText[3].IndexOf("B=")+2, 3)));
+                    if (sText[4] != "")
+                        frm.txtTitle.ForeColor = System.Drawing.Color.FromArgb(int.Parse(sText[4].Substring(sText[4].IndexOf("A=") + 2, 3)), int.Parse(sText[4].Substring(sText[4].IndexOf("R=") + 2, 3)), int.Parse(sText[4].Substring(sText[4].IndexOf("G=") + 2, 3)), int.Parse(sText[4].Substring(sText[4].IndexOf("B=") + 2, 3)));
                 }
 
             }
             if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
 
-
-
-                File.WriteAllText(Properties.Settings.Default.OtherDocsPath + "\\پیامها\\پیام عمومی.txt", frm.txtTitle.Text + "#" + frm.lblDelay.Text + "#" + frm.lblDuration.Text);
+                File.WriteAllText(Properties.Settings.Default.OtherDocsPath + "\\پیامها\\پیام عمومی.txt", frm.txtTitle.Text + "#" + frm.lblDelay.Text + "#" + frm.lblDuration.Text + "#" + frm.txtTitle.BackColor.ToString() + "#" + frm.txtTitle.ForeColor.ToString());
 
                 ((MainViewModel)DataContext).MessageDealy = int.Parse(frm.lblDelay.Text);
                 ((MainViewModel)DataContext).MessageDuration = int.Parse(frm.lblDuration.Text);
                 ((MainViewModel)DataContext).MessageTitle = frm.txtTitle.Text;
+                ((MainViewModel)DataContext).MessageBackColor = frm.txtTitle.BackColor;
+                ((MainViewModel)DataContext).MessageForeColor = frm.txtTitle.ForeColor;
 
 
                 /*
@@ -640,8 +646,8 @@ namespace SessionPresent.Views
 
                 }
                 */
-            }
 
+            }
 
             frm.Dispose();
 

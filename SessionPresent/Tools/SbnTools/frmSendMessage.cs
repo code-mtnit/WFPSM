@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ColorPicker;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,30 @@ namespace SessionPresent.Tools.SbnTools
         }
 
         private void btnApplay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ColorPickerDialog dlg = new ColorPickerDialog();
+            if (dlg.ShowDialog(this) == DialogResult.OK)
+            {
+                this.txtTitle.ForeColor = dlg.ColorPicker.SelectedColor;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ColorPickerDialog dlg = new ColorPickerDialog();
+            if (dlg.ShowDialog(this) == DialogResult.OK)
+            {
+                this.txtTitle.BackColor = dlg.ColorPicker.SelectedColor;
+            }
+
+        }
+
+        private void frmSendMessage_Load(object sender, EventArgs e)
         {
 
         }
