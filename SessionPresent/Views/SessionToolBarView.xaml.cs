@@ -605,9 +605,17 @@ namespace SessionPresent.Views
                     if (sText[2] != "0")
                         frm.lblDuration.Text = sText[2];
                     if (sText[3] != "")
-                        frm.txtTitle.BackColor =  System.Drawing.Color.FromArgb (int.Parse(sText[3].Substring(sText[3].IndexOf("A=")+2 , 3)) , int.Parse(sText[3].Substring(sText[3].IndexOf("R=")+2, 3)) , int.Parse(sText[3].Substring(sText[3].IndexOf("G="), 3)) , int.Parse(sText[3].Substring(sText[3].IndexOf("B=")+2, 3)));
+                    {
+                        string sC = sText[3].Replace("Color", "").Replace("[", "").Replace("]", "");
+                        string[] colors = sC.Split(',');
+                        frm.txtTitle.BackColor = System.Drawing.Color.FromArgb(int.Parse(colors[0].Trim().Substring(2)), int.Parse(colors[1].Trim().Substring(2)), int.Parse(colors[2].Trim().Substring(2)), int.Parse(colors[3].Trim().Substring(2)));
+                    }
                     if (sText[4] != "")
-                        frm.txtTitle.ForeColor = System.Drawing.Color.FromArgb(int.Parse(sText[4].Substring(sText[4].IndexOf("A=") + 2, 3)), int.Parse(sText[4].Substring(sText[4].IndexOf("R=") + 2, 3)), int.Parse(sText[4].Substring(sText[4].IndexOf("G=") + 2, 3)), int.Parse(sText[4].Substring(sText[4].IndexOf("B=") + 2, 3)));
+                    {
+                        string sC = sText[4].Replace("Color", "").Replace("[", "").Replace("]", "");
+                        string[] colors = sC.Split(',');
+                        frm.txtTitle.ForeColor= System.Drawing.Color.FromArgb(int.Parse(colors[0].Trim().Substring(2)), int.Parse(colors[1].Trim().Substring(2)), int.Parse(colors[2].Trim().Substring(2)), int.Parse(colors[3].Trim().Substring(2)));
+                    }
                 }
 
             }

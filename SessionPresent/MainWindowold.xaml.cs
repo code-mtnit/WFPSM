@@ -140,6 +140,15 @@ namespace SessionPresent
                             vm.MessageTitle = sText[0];
                             vm.MessageDealy = int.Parse(sText[1]);
                             vm.MessageDuration = int.Parse(sText[2]);
+
+                            string sC = sText[3].Replace("Color", "").Replace("[", "").Replace("]", "");
+                            string[] colors = sC.Split(',');
+                            vm.MessageBackColor = System.Drawing.Color.FromArgb(int.Parse(colors[0].Trim().Substring(2)), int.Parse(colors[1].Trim().Substring(2)), int.Parse(colors[2].Trim().Substring(2)), int.Parse(colors[3].Trim().Substring(2)));
+
+                            sC = sText[4].Replace("Color", "").Replace("[", "").Replace("]", "");
+                            colors = sC.Split(',');
+                            vm.MessageForeColor = System.Drawing.Color.FromArgb(int.Parse(colors[0].Trim().Substring(2)), int.Parse(colors[1].Trim().Substring(2)), int.Parse(colors[2].Trim().Substring(2)), int.Parse(colors[3].Trim().Substring(2)));
+
                         }
                     }
                         //_timerMessaging.Interval = vm.MessageDealy*1000*60;
@@ -149,11 +158,13 @@ namespace SessionPresent
                     frm.timer1.Interval = vm.MessageDuration * 1000;
                     frm.Top = (int)(this.Height - 50 - frm.Height);
                     frm.Left = (int)(this.Width / 2 - frm.Width / 2);
+                    frm.BackColor = vm.MessageBackColor;
+                    frm.ForeColor = vm.MessageForeColor;
                     frm.Show();
                 }
                 catch
                 {
-
+                    MessageBox.Show("اشکالی در فراخوانی اطلاعات پیام بوجود آمده است!");
                 }
 
 
