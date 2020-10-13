@@ -53,7 +53,7 @@ namespace Sbn.Core
     
     [TypeConverter(typeof(ExpandableObjectConverter))]
     [Serializable]
-    [PropertyChanged.ImplementPropertyChanged]
+    //[PropertyChanged.ImplementPropertyChanged]
     abstract public class SbnObject : ISbnObject, IComparable//, INotifyPropertyChanged
     {
 

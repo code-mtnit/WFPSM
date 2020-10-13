@@ -120,6 +120,18 @@ namespace SessionPresent
             }
         }
 
+        private Font _MessageFont = new Font(new FontFamily( "B Nazanin") , 18f);
+        public Font MessageFont
+        {
+            get { return _MessageFont; }
+            set
+            {
+                _MessageFont  = value;
+                OnPropertyChanged("MessageFont");
+            }
+        }
+
+
         private Color _MessageBackColor = Color.White;
         public Color MessageBackColor
         {

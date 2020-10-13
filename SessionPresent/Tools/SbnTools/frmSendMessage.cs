@@ -57,5 +57,19 @@ namespace SessionPresent.Tools.SbnTools
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            //fontDialog1.ShowColor = true;
+            FontDialog fontDialog1 = new FontDialog();
+            fontDialog1.Font = txtTitle.Font;
+            fontDialog1.Color = txtTitle.ForeColor;
+
+            if (fontDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                txtTitle.Font = fontDialog1.Font;
+            }
+        }
     }
 }

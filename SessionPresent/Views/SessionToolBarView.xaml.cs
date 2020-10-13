@@ -622,13 +622,15 @@ namespace SessionPresent.Views
             if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
 
-                File.WriteAllText(Properties.Settings.Default.OtherDocsPath + "\\پیامها\\پیام عمومی.txt", frm.txtTitle.Text + "#" + frm.lblDelay.Text + "#" + frm.lblDuration.Text + "#" + frm.txtTitle.BackColor.ToString() + "#" + frm.txtTitle.ForeColor.ToString());
+                File.WriteAllText(Properties.Settings.Default.OtherDocsPath + "\\پیامها\\پیام عمومی.txt", frm.txtTitle.Text + "#" + frm.lblDelay.Text + "#" + frm.lblDuration.Text + "#" + frm.txtTitle.BackColor.ToString() + "#" + frm.txtTitle.ForeColor.ToString() 
+                    + "#" + frm.txtTitle.Font.Name.ToString() + "#" + frm.txtTitle.Font.Size.ToString());
 
                 ((MainViewModel)DataContext).MessageDealy = int.Parse(frm.lblDelay.Text);
                 ((MainViewModel)DataContext).MessageDuration = int.Parse(frm.lblDuration.Text);
                 ((MainViewModel)DataContext).MessageTitle = frm.txtTitle.Text;
                 ((MainViewModel)DataContext).MessageBackColor = frm.txtTitle.BackColor;
                 ((MainViewModel)DataContext).MessageForeColor = frm.txtTitle.ForeColor;
+                ((MainViewModel)DataContext).MessageFont = frm.txtTitle.Font;
 
 
                 /*

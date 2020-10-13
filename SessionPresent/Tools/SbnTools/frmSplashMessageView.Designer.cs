@@ -41,9 +41,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMessage.Font = new System.Drawing.Font("B Zar", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblMessage.ForeColor = System.Drawing.Color.Green;
-            this.lblMessage.Location = new System.Drawing.Point(12, 1);
+            this.lblMessage.Location = new System.Drawing.Point(-1, 1);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(741, 120);
+            this.lblMessage.Size = new System.Drawing.Size(772, 120);
             this.lblMessage.TabIndex = 0;
             this.lblMessage.Text = "متن پیام";
             // 

@@ -45,26 +45,26 @@
       <HintPath>..\Libs\ColorPicker.dll</HintPath>
     </Reference>
     <Reference Include="GalaSoft.MvvmLight.Extras.WPF4">
-      <HintPath>..\..\lib\GalaSoft.MvvmLight.Extras.WPF4.dll</HintPath>
+      <HintPath>..\Libs\GalaSoft.MvvmLight.Extras.WPF4.dll</HintPath>
     </Reference>
     <Reference Include="GalaSoft.MvvmLight.WPF4">
-      <HintPath>..\..\lib\GalaSoft.MvvmLight.WPF4.dll</HintPath>
+      <HintPath>..\Libs\GalaSoft.MvvmLight.WPF4.dll</HintPath>
     </Reference>
     <Reference Include="Hatefnet.Products.Controls.Magnifier">
-      <HintPath>..\..\lib\Hatefnet.Products.Controls.Magnifier.dll</HintPath>
+      <HintPath>..\Libs\Hatefnet.Products.Controls.Magnifier.dll</HintPath>
     </Reference>
     <Reference Include="Interop.MSXML2">
       <HintPath>..\Sbn.Libs.XMLPareser\bin\Debug\Interop.MSXML2.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="JetBrains.Annotations">
-      <HintPath>..\..\lib\JetBrains.Annotations.dll</HintPath>
+      <HintPath>..\Libs\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro">
-      <HintPath>..\..\lib\MahApps.Metro.dll</HintPath>
+      <HintPath>..\Libs\MahApps.Metro.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro.IconPacks">
-      <HintPath>..\..\lib\MahApps.Metro.IconPacks.dll</HintPath>
+      <HintPath>..\Libs\MahApps.Metro.IconPacks.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -72,12 +72,6 @@
     <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="NHotkey">
-      <HintPath>..\..\lib\NHotkey.dll</HintPath>
-    </Reference>
-    <Reference Include="NHotkey.Wpf">
-      <HintPath>..\..\lib\NHotkey.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

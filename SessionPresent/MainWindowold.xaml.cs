@@ -149,6 +149,9 @@ namespace SessionPresent
                             colors = sC.Split(',');
                             vm.MessageForeColor = System.Drawing.Color.FromArgb(int.Parse(colors[0].Trim().Substring(2)), int.Parse(colors[1].Trim().Substring(2)), int.Parse(colors[2].Trim().Substring(2)), int.Parse(colors[3].Trim().Substring(2)));
 
+                            string fontname = sText[5];
+                            string fontsize = sText[6];
+                            vm.MessageFont = new System.Drawing.Font(fontname, float.Parse(fontsize) , System.Drawing.FontStyle.Bold) ;
                         }
                     }
                         //_timerMessaging.Interval = vm.MessageDealy*1000*60;
@@ -158,8 +161,9 @@ namespace SessionPresent
                     frm.timer1.Interval = vm.MessageDuration * 1000;
                     frm.Top = (int)(this.Height - 50 - frm.Height);
                     frm.Left = (int)(this.Width / 2 - frm.Width / 2);
-                    frm.BackColor = vm.MessageBackColor;
-                    frm.ForeColor = vm.MessageForeColor;
+                    frm.lblMessage.BackColor = vm.MessageBackColor;
+                    frm.lblMessage.ForeColor = vm.MessageForeColor;
+                    frm.lblMessage.Font = vm.MessageFont;
                     frm.Show();
                 }
                 catch
