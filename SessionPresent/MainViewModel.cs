@@ -198,6 +198,26 @@ namespace SessionPresent
             }
         }
 
+        private SessionItemViewModel _cutItem;
+        public SessionItemViewModel CutItem
+        {
+            get { return _cutItem; }
+            set
+            {
+                _cutItem = value;
+                //if (_currentViewItem != null)
+                //    _currentViewItem.OpenFolder(_currentViewItem.CurrnetViewFolder);
+                OnPropertyChanged("CutItem");
+                //if (_currentViewItem != null)
+                //{
+                //    _currentViewItem.IsExpanded = true;
+                //    _currentViewItem.IsSelected = true;
+                //    //OnOpenItemEvent(new SbnEventArgs(_currentViewItem.CurrnetViewFolder));
+                //}
+
+
+            }
+        }
 
         private bool showMyTitleBar = true;
         public bool ShowMyTitleBar

@@ -544,5 +544,46 @@ namespace SessionPresent
             InputManager.Current.ProcessInput(downKey);
         }
 
+        private void mnuCut_Click(object sender, RoutedEventArgs e)
+        {
+            if (vm.CurrentViewItem.Object is Offer)
+            {
+                vm.CutItem = vm.CurrentViewItem;
+            }
+            else
+                MessageBox.Show("پیغام", "برای انتقال می بایست یک پیشنهاد را انتخاب نمایید.", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
+        private void mnuPaste_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(vm.CurrentViewItem.Object is Catalogue))
+            {
+                MessageBox.Show( "برای انتقال می بایست یک فهرست را برای مقصد انتخاب نمایید.", "پیغام", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (vm.CutItem.Object is Offer && vm.CurrentViewItem.Object is Catalogue)
+            {
+                if (MessageBox.Show("آیا پیشنهاد مورد نظر به فهرست انتخاب شده انتقال یابد ؟", "پیغام", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    string OfferPath = ((Sbn.Core.SbnObject)vm.CutItem.Object)._PhysicalPath;
+                    DirectoryInfo inf = new DirectoryInfo(OfferPath);
+
+                    string CataloguePath = ((Sbn.Core.SbnObject)vm.CurrentViewItem.Object)._PhysicalPath + "\\Offers\\" + inf.Name;
+                    try
+                    {
+                        System.IO.Directory.Move(OfferPath, CataloguePath);
+                    }
+                    catch(Exception ex)
+                    { 
+                        MessageBox.Show( "بروز خطا در انتقال پیشنهاد.", "خطا", MessageBoxButton.OK, MessageBoxImage.Error);
+    
+                    }
+
+                    MessageBox.Show( "پیشنهاد به فهرست انتخاب شده انتقال یافت .\n\rبرای مشاهده تغییرات لطفا به روز رسانی نمایید.", "پیغام", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                }
+
+            }
+        }
     }
 }
