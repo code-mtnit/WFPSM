@@ -82,7 +82,7 @@ namespace SessionPresent
             this.dataGridClients.Name = "dataGridClients";
             this.dataGridClients.ReadOnly = true;
             this.dataGridClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridClients.Size = new System.Drawing.Size(558, 597);
+            this.dataGridClients.Size = new System.Drawing.Size(512, 323);
             this.dataGridClients.TabIndex = 0;
             this.dataGridClients.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridClients_UserDeletingRow);
             this.dataGridClients.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridClients_MouseDoubleClick);
@@ -95,7 +95,7 @@ namespace SessionPresent
             this.groupBox4.Controls.Add(this.dataGridViewHostInformation);
             this.groupBox4.Location = new System.Drawing.Point(3, 117);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(308, 522);
+            this.groupBox4.Size = new System.Drawing.Size(282, 248);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "موارد یافت شده ";
@@ -110,7 +110,7 @@ namespace SessionPresent
             this.dataGridViewHostInformation.Name = "dataGridViewHostInformation";
             this.dataGridViewHostInformation.ReadOnly = true;
             this.dataGridViewHostInformation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewHostInformation.Size = new System.Drawing.Size(302, 502);
+            this.dataGridViewHostInformation.Size = new System.Drawing.Size(276, 228);
             this.dataGridViewHostInformation.TabIndex = 1;
             this.dataGridViewHostInformation.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewHostInformation_CellMouseDoubleClick);
             this.dataGridViewHostInformation.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewHostInformation_MouseDoubleClick);
@@ -122,7 +122,7 @@ namespace SessionPresent
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtTo);
-            this.groupBox1.Location = new System.Drawing.Point(117, 37);
+            this.groupBox1.Location = new System.Drawing.Point(91, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(191, 74);
             this.groupBox1.TabIndex = 23;
@@ -181,7 +181,7 @@ namespace SessionPresent
             this.groupBox3.Location = new System.Drawing.Point(0, 25);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox3.Size = new System.Drawing.Size(564, 617);
+            this.groupBox3.Size = new System.Drawing.Size(518, 343);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "سایر کاربران ";
@@ -208,8 +208,8 @@ namespace SessionPresent
             this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip1);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.splitContainer1.Size = new System.Drawing.Size(882, 642);
-            this.splitContainer1.SplitterDistance = 314;
+            this.splitContainer1.Size = new System.Drawing.Size(810, 368);
+            this.splitContainer1.SplitterDistance = 288;
             this.splitContainer1.TabIndex = 31;
             // 
             // toolStrip2
@@ -219,7 +219,7 @@ namespace SessionPresent
             this.tsbtnAddToCliens});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(314, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(288, 25);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -256,7 +256,7 @@ namespace SessionPresent
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStrip1.Size = new System.Drawing.Size(564, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(518, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -309,6 +309,7 @@ namespace SessionPresent
             // tstxtPort
             // 
             this.tstxtPort.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tstxtPort.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tstxtPort.Name = "tstxtPort";
             this.tstxtPort.Size = new System.Drawing.Size(100, 25);
             this.tstxtPort.Visible = false;
@@ -327,7 +328,7 @@ namespace SessionPresent
             this.tsbtnCloseClient.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnCloseClient.Image")));
             this.tsbtnCloseClient.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnCloseClient.Name = "tsbtnCloseClient";
-            this.tsbtnCloseClient.Size = new System.Drawing.Size(88, 20);
+            this.tsbtnCloseClient.Size = new System.Drawing.Size(88, 22);
             this.tsbtnCloseClient.Text = "بستن کارتابل";
             this.tsbtnCloseClient.Click += new System.EventHandler(this.tsbtnCloseClient_Click);
             // 
@@ -336,7 +337,7 @@ namespace SessionPresent
             this.tsbtnShutdownPC.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnShutdownPC.Image")));
             this.tsbtnShutdownPC.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnShutdownPC.Name = "tsbtnShutdownPC";
-            this.tsbtnShutdownPC.Size = new System.Drawing.Size(82, 20);
+            this.tsbtnShutdownPC.Size = new System.Drawing.Size(82, 22);
             this.tsbtnShutdownPC.Text = "ShutDown";
             this.tsbtnShutdownPC.Click += new System.EventHandler(this.tsbtnShutdownPC_Click);
             // 
@@ -344,7 +345,7 @@ namespace SessionPresent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 642);
+            this.ClientSize = new System.Drawing.Size(810, 368);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.lblRec);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));

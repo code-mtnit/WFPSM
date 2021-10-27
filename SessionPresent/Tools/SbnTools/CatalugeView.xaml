@@ -181,7 +181,16 @@
                     </DataGridTemplateColumn.CellTemplate>
 
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="پیشنهاد دهنده" MaxWidth="300" >
+                
+                <!--<DataGridTemplateColumn Header="ارائه دهنده" MaxWidth="300" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Object.PresenterOrgans[0].Title}" TextWrapping="Wrap"  Margin="10" FontWeight="Bold"  VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+
+                <DataGridTemplateColumn Header="ارائه دهنده" MaxWidth="300" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Object.OwnerOrgan.CorrelateOrgUnit.Title}" TextWrapping="Wrap"  Margin="10" FontWeight="Bold"  VerticalAlignment="Center"/>

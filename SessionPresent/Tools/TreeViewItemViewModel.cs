@@ -154,6 +154,7 @@ namespace SessionPresent.Tools
         {
             get
             {
+                return "";
                 throw new NotImplementedException();
             }
         }

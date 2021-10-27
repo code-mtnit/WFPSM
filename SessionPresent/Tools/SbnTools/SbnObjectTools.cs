@@ -304,6 +304,42 @@ namespace SessionPresent.Tools.SbnTools
             }
             Sbn.Windows.Forms.AdvancedControls.WaitForm.WaitForm.getInstance().stopW();
 
+            int gcount = 0;
+            while(gcount < AllGSessions.Count)
+            {
+                GovSession g = AllGSessions[gcount];
+
+                int ccount = 0;
+                while (ccount < g.Catalogues.Count)
+                {
+                    Catalogue c = g.Catalogues[ccount];
+
+                    int fcount = 0;
+                    while (fcount < c.Offers.Count)
+                    {
+                        Offer f = c.Offers[fcount];
+                        if(f.PresenterOrgans != null && f.PresenterOrgans.Count >0)
+                        {
+                            f.OwnerOrgan.Title = "";
+                            foreach (Sbn.Systems.WMC.WMCObject.OrgUnit o in f.PresenterOrgans)
+                            {
+                                if (f.OwnerOrgan.Title != "") f.OwnerOrgan.Title += " , ";
+
+                                f.OwnerOrgan.Title += o.Title; 
+
+                            }
+                        }
+                        fcount++;
+                    }
+
+                    ccount++;
+
+                }
+
+
+                gcount++;
+
+            }
 
             return AllGSessions;
         }

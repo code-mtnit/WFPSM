@@ -443,7 +443,37 @@ namespace SessionPresent
                         //govOrder.Children.RemoveAt(1);
                         govOrder.Children.Insert(0, newsParent);
                     }
+
+                    
                 }
+                foreach(Sbn.Products.GEP.GEPObject.PreSessionOrder pre in gItm.PreOrders)
+                {
+                    if (pre.Title.Contains("تلاوت") || pre.Title.Contains("قرآن") || pre.Title.Contains("اخبار") || pre.Title.Contains("خبر")) continue;
+
+                    var preOrderfiles = System.IO.Directory.GetFiles(pre._PhysicalPath ).ToList();
+                    var preItem = new SessionItemViewModel(govOrder);
+
+                    if (preOrderfiles.Count > 1)
+                    {
+                        var fs = preOrderfiles.Where(x => x.Contains("mht")).ToList();
+
+                        var preOrderViewer = new Tools.FolderLaws.LawView();
+                        preItem.TitleBackColor = pre.TitleBackColor;
+                        preItem.TitleForeColor = pre.TitleForeColor;
+
+                        preItem.Title = Path.GetFileNameWithoutExtension(fs[0]);
+                        preItem.Object = fs[0];
+                        preItem.ObjectViewer = preOrderViewer;
+                    }
+                    else
+                    {
+                        preItem.Title = pre.Title;
+                    }
+                    govOrder.Children.Insert(gItm.PreOrders.Count-1, preItem);
+
+
+                }
+
             }
         }
     }

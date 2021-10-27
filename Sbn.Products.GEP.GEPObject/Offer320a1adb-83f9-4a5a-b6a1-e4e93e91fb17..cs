@@ -50,6 +50,7 @@ namespace Sbn.Products.GEP.GEPObject
         private BasicInfoDetail _Urgency;
         private string _VicePresidentLetterID;
         private string _VicePresidentReceiptdate;
+        private OrgUnits _PresenterOrgans;
 
         private PublishableState _IsPublishable = PublishableState.None;
         private string _PublishableDate;
@@ -228,6 +229,12 @@ namespace Sbn.Products.GEP.GEPObject
             if (!object.ReferenceEquals(this.WordDoc, null))
                 offer.WordDoc = (GeneralDocument)this.WordDoc.Clone(sNodeName);
 
+            if(!object.ReferenceEquals(this.PresenterOrgans , null))
+            {
+                offer.PresenterOrgans = (OrgUnits)this.PresenterOrgans.Clone(sNodeName);
+
+            }
+
             return offer;
         }
 
@@ -272,6 +279,7 @@ namespace Sbn.Products.GEP.GEPObject
             this._IsPublishable = PublishableState.None;
             this._PublishableDate = "";
             this._WordDoc = new GeneralDocument();
+            this._PresenterOrgans = new OrgUnits();
         }
 
         public override string ToString()
@@ -1541,6 +1549,20 @@ namespace Sbn.Products.GEP.GEPObject
             set
             {
                 this._Subjects = value;
+            }
+        }
+
+        
+        [RelationTable(""), Description("دستگاه های ارائه دهنده"), DisplayName("ارائه دهندگان"), Category(""), DocumentAttributeID("9999"), Browsable(true), IsRelational("False"), AttributeType("OrgUnit"), IsMiddleTableExist("False")]
+        public OrgUnits PresenterOrgans
+        {
+            get
+            {
+                return this._PresenterOrgans;
+            }
+            set
+            {
+                this._PresenterOrgans = value;
             }
         }
 
