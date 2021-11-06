@@ -235,5 +235,37 @@ namespace SessionPresent.Tools.FolderLaws
         {
             throw new NotImplementedException();
         }
+
+        private void lsvDocs_Selected(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (((ListView)( e.Source)).SelectedItem == null)
+                    return;
+
+
+                var itm = ((ListView)(e.Source)).SelectedItem as SessionItemViewModel;
+
+                //ShowItem(sItm);
+                if (itm == null)
+                    return;
+
+                var itmTemp = itm.Parent;
+
+                while (itmTemp != null)
+                {
+                    itmTemp.IsExpanded = true;
+                    itmTemp = itmTemp.Parent;
+                }
+
+                itm.IsSelected = true;
+
+            }
+            catch
+            {
+
+            }
+
+        }
     }
 }

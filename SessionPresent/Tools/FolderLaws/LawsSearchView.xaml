@@ -22,7 +22,7 @@
             <TextBlock  Text="{Binding Title}"  HorizontalAlignment="Center" FontFamily="B Nazanin" FontSize="40" TextAlignment="Center"  Height="60" Foreground="White" />                       
         </DockPanel>
 
-        <ListView Grid.Row="1" FlowDirection="RightToLeft" Name="lsvDocs" ScrollViewer.VerticalScrollBarVisibility="Disabled"  FontFamily="B Nazanin" FontSize="18" FontWeight="Bold" ItemsSource="{Binding Children}" SelectionChanged="ListView_SelectionChanged" Background="White" >
+        <ListView Grid.Row="1" FlowDirection="RightToLeft" Name="lsvDocs" ScrollViewer.VerticalScrollBarVisibility="Disabled"  FontFamily="B Nazanin" FontSize="18" FontWeight="Bold" ItemsSource="{Binding Children}"  MouseUp="lsvDocs_Selected"  SelectionChanged="ListView_SelectionChanged" Background="White" >
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Vertical" />

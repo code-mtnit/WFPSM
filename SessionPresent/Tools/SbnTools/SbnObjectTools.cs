@@ -320,12 +320,12 @@ namespace SessionPresent.Tools.SbnTools
                         Offer f = c.Offers[fcount];
                         if(f.PresenterOrgans != null && f.PresenterOrgans.Count >0)
                         {
-                            f.OwnerOrgan.Title = "";
+                            f.OwnerOrgan.CorrelateOrgUnit.Title = "";
                             foreach (Sbn.Systems.WMC.WMCObject.OrgUnit o in f.PresenterOrgans)
                             {
-                                if (f.OwnerOrgan.Title != "") f.OwnerOrgan.Title += " , ";
+                                if (f.OwnerOrgan.CorrelateOrgUnit.Title != "") f.OwnerOrgan.CorrelateOrgUnit.Title += " , ";
 
-                                f.OwnerOrgan.Title += o.Title; 
+                                f.OwnerOrgan.CorrelateOrgUnit.Title += o.Title; 
 
                             }
                         }
