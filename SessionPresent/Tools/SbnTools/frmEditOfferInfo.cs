@@ -32,7 +32,7 @@ namespace SessionPresent.Tools.SbnTools
             }
         }
 
-        private Offer CurrentObject = null;
+        public Offer CurrentObject = null;
         public void FillObject(Offer off)
         {
             CurrentObject = off;

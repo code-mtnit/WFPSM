@@ -48,7 +48,7 @@
             
             <TextBlock x:Name="textBlock" Grid.Row="0" Height="150"  TextWrapping="Wrap" Text="{Binding MainTitle, Mode=TwoWay}" VerticalAlignment="Top"  Foreground="Black"  Margin="0,10,0,0" TextAlignment="Center" FontFamily="B Titr" FontSize="30"/>
 
-            <ListView  Grid.Row="1" Name="lsvExternalTools" Background="{x:Null}" ItemsSource="{Binding Children}" SelectionChanged="lsvSessions_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,15,0,0">
+            <ListView  Grid.Row="1" Name="lsvExternalTools" Background="{x:Null}" ItemsSource="{Binding Children}" SelectionChanged="lsvSessions_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,15,0,0" BorderBrush="{x:Null}">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel  HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,0"/>

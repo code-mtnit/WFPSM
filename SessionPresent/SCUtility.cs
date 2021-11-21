@@ -262,6 +262,7 @@ namespace SessionPresent
                         itm2.ItemIcon = "FolderOpen";
                         itm2.ItemWidth = 200;
                         itm2.BackColor = System.Drawing.Color.DarkTurquoise.Name;
+                        
 
                         vm.Children.Add(itm2);
                     }

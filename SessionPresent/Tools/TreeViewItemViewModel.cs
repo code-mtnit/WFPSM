@@ -20,6 +20,13 @@ namespace SessionPresent.Tools
         bool _isExpanded;
         bool _isSelected;
 
+        bool _isCatalogue;
+        public bool IsCatalogue
+        {
+            get { return _isCatalogue; }
+            set { _isCatalogue = value; }
+        }
+
         #endregion // Data
 
         private string _title = "عنوان";
@@ -73,6 +80,13 @@ namespace SessionPresent.Tools
         public bool HasDummyChild
         {
             get { return this.Children.Count == 1 && this.Children[0] == DummyChild; }
+        }
+
+
+
+        public string HasChild
+        {
+            get {  return ((this.Children.Count >= 1 && !this._isCatalogue) ? "Visible" : "Hidden") ; }
         }
 
         #endregion // HasLoadedChildren

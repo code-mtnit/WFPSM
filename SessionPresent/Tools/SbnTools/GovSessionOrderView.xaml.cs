@@ -123,6 +123,7 @@ namespace SessionPresent.Tools.SbnTools
             */
 
             lsvSessionOrder.ItemsSource = CurrentSessionItem.Children;
+            treeview.Items.Clear();
             treeview.ItemsSource = CurrentSessionItem.Children;
 
 

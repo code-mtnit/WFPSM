@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using GalaSoft.MvvmLight.Command;
 using SessionPresent.Model;
 using SessionPresent.Tools;
@@ -223,5 +224,8 @@ namespace SessionPresent.ViewModel
         int itemWidth;
 
         string itemIcon;
-    }
+
+     }
+
+
 }

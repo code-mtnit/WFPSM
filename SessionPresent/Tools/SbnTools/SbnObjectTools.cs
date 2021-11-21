@@ -91,6 +91,8 @@ namespace SessionPresent.Tools.SbnTools
                             itmCat.TitleForeColor = (cat.TitleForeColor != null ? cat.TitleForeColor : "Black");
                             itmCat.TitleBackColor = (cat.TitleBackColor != null ? cat.TitleBackColor : "White");
 
+                            itmCat.IsCatalogue = true;
+
                             var objViewerOffer = new SbnTools.OfferView();
                             var AllObjOffer = new List<SessionItemViewModel>();
 

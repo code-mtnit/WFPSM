@@ -554,6 +554,16 @@
   <ItemGroup>
     <Resource Include="Images\Pencil.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\document_page_previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NodePoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ArrowDown.png" />
+    <Resource Include="Images\ArrowLeft.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

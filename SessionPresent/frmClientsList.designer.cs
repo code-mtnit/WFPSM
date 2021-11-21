@@ -43,7 +43,6 @@ namespace SessionPresent
             this.txtTo = new System.Windows.Forms.TextBox();
             this.lblRec = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.clientInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.tsbtnStartSearch = new System.Windows.Forms.ToolStripButton();
@@ -58,31 +57,34 @@ namespace SessionPresent
             this.tsbtnSave = new System.Windows.Forms.ToolStripButton();
             this.tsbtnCloseClient = new System.Windows.Forms.ToolStripButton();
             this.tsbtnShutdownPC = new System.Windows.Forms.ToolStripButton();
+            this.clientInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClients)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHostInformation)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientInfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientInfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridClients
             // 
             this.dataGridClients.AllowUserToAddRows = false;
             this.dataGridClients.BackgroundColor = System.Drawing.Color.Lavender;
-            this.dataGridClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridClients.ColumnHeadersHeight = 32;
             this.dataGridClients.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridClients.Location = new System.Drawing.Point(3, 17);
+            this.dataGridClients.Location = new System.Drawing.Point(4, 24);
+            this.dataGridClients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridClients.Name = "dataGridClients";
             this.dataGridClients.ReadOnly = true;
+            this.dataGridClients.RowHeadersWidth = 100;
             this.dataGridClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridClients.Size = new System.Drawing.Size(512, 323);
+            this.dataGridClients.Size = new System.Drawing.Size(605, 377);
             this.dataGridClients.TabIndex = 0;
             this.dataGridClients.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridClients_UserDeletingRow);
             this.dataGridClients.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridClients_MouseDoubleClick);
@@ -93,9 +95,11 @@ namespace SessionPresent
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.dataGridViewHostInformation);
-            this.groupBox4.Location = new System.Drawing.Point(3, 117);
+            this.groupBox4.Location = new System.Drawing.Point(4, 171);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(282, 248);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Size = new System.Drawing.Size(333, 254);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "موارد یافت شده ";
@@ -106,11 +110,12 @@ namespace SessionPresent
             this.dataGridViewHostInformation.BackgroundColor = System.Drawing.Color.Lavender;
             this.dataGridViewHostInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHostInformation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewHostInformation.Location = new System.Drawing.Point(3, 17);
+            this.dataGridViewHostInformation.Location = new System.Drawing.Point(4, 24);
+            this.dataGridViewHostInformation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewHostInformation.Name = "dataGridViewHostInformation";
             this.dataGridViewHostInformation.ReadOnly = true;
             this.dataGridViewHostInformation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewHostInformation.Size = new System.Drawing.Size(276, 228);
+            this.dataGridViewHostInformation.Size = new System.Drawing.Size(325, 226);
             this.dataGridViewHostInformation.TabIndex = 1;
             this.dataGridViewHostInformation.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewHostInformation_CellMouseDoubleClick);
             this.dataGridViewHostInformation.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewHostInformation_MouseDoubleClick);
@@ -122,9 +127,11 @@ namespace SessionPresent
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtTo);
-            this.groupBox1.Location = new System.Drawing.Point(91, 37);
+            this.groupBox1.Location = new System.Drawing.Point(46, 54);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(191, 74);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(286, 108);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "محدوده IP ";
@@ -132,17 +139,19 @@ namespace SessionPresent
             // txtFrom
             // 
             this.txtFrom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtFrom.Location = new System.Drawing.Point(6, 19);
+            this.txtFrom.Location = new System.Drawing.Point(9, 28);
+            this.txtFrom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFrom.MaxLength = 15;
             this.txtFrom.Name = "txtFrom";
-            this.txtFrom.Size = new System.Drawing.Size(131, 21);
+            this.txtFrom.Size = new System.Drawing.Size(194, 27);
             this.txtFrom.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(143, 22);
+            this.label3.Location = new System.Drawing.Point(214, 32);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 6;
@@ -152,7 +161,8 @@ namespace SessionPresent
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(143, 48);
+            this.label5.Location = new System.Drawing.Point(214, 70);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 13);
             this.label5.TabIndex = 7;
@@ -160,18 +170,20 @@ namespace SessionPresent
             // 
             // txtTo
             // 
-            this.txtTo.Location = new System.Drawing.Point(6, 45);
+            this.txtTo.Location = new System.Drawing.Point(9, 66);
+            this.txtTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTo.MaxLength = 15;
             this.txtTo.Name = "txtTo";
-            this.txtTo.Size = new System.Drawing.Size(131, 21);
+            this.txtTo.Size = new System.Drawing.Size(194, 27);
             this.txtTo.TabIndex = 4;
             // 
             // lblRec
             // 
             this.lblRec.AutoSize = true;
-            this.lblRec.Location = new System.Drawing.Point(896, 158);
+            this.lblRec.Location = new System.Drawing.Point(1344, 231);
+            this.lblRec.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRec.Name = "lblRec";
-            this.lblRec.Size = new System.Drawing.Size(0, 13);
+            this.lblRec.Size = new System.Drawing.Size(0, 19);
             this.lblRec.TabIndex = 22;
             // 
             // groupBox3
@@ -179,21 +191,20 @@ namespace SessionPresent
             this.groupBox3.Controls.Add(this.dataGridClients);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 25);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox3.Size = new System.Drawing.Size(518, 343);
+            this.groupBox3.Size = new System.Drawing.Size(613, 405);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "سایر کاربران ";
-            // 
-            // clientInfoBindingSource
-            // 
-            this.clientInfoBindingSource.DataSource = typeof(BaseClass.ClientInfo);
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -208,8 +219,9 @@ namespace SessionPresent
             this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip1);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.splitContainer1.Size = new System.Drawing.Size(810, 368);
-            this.splitContainer1.SplitterDistance = 288;
+            this.splitContainer1.Size = new System.Drawing.Size(960, 430);
+            this.splitContainer1.SplitterDistance = 341;
+            this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 31;
             // 
             // toolStrip2
@@ -219,7 +231,8 @@ namespace SessionPresent
             this.tsbtnAddToCliens});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(288, 25);
+            this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip2.Size = new System.Drawing.Size(341, 25);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -255,8 +268,9 @@ namespace SessionPresent
             this.tsbtnShutdownPC});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStrip1.Size = new System.Drawing.Size(518, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(613, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -311,7 +325,7 @@ namespace SessionPresent
             this.tstxtPort.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tstxtPort.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tstxtPort.Name = "tstxtPort";
-            this.tstxtPort.Size = new System.Drawing.Size(100, 25);
+            this.tstxtPort.Size = new System.Drawing.Size(148, 23);
             this.tstxtPort.Visible = false;
             // 
             // tsbtnSave
@@ -341,14 +355,19 @@ namespace SessionPresent
             this.tsbtnShutdownPC.Text = "ShutDown";
             this.tsbtnShutdownPC.Click += new System.EventHandler(this.tsbtnShutdownPC_Click);
             // 
+            // clientInfoBindingSource
+            // 
+            this.clientInfoBindingSource.DataSource = typeof(BaseClass.ClientInfo);
+            // 
             // frmClientsList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 368);
+            this.ClientSize = new System.Drawing.Size(960, 430);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.lblRec);
-            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmClientsList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ShowInTaskbar = false;
@@ -361,7 +380,6 @@ namespace SessionPresent
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.clientInfoBindingSource)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -372,6 +390,7 @@ namespace SessionPresent
             this.toolStrip2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

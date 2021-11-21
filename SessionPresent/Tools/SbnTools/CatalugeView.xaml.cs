@@ -28,9 +28,15 @@ namespace SessionPresent.Tools.SbnTools
             InitializeComponent();
 
         }
+        public SessionItemViewModel CurrentSessionItem { get; set; }
+
 
         public void FillObject(object obj, object mvm)
         {
+
+
+            CurrentSessionItem = obj as SessionItemViewModel;
+
             DataContext = obj;
             Offer off = new Offer();
 
@@ -143,6 +149,11 @@ namespace SessionPresent.Tools.SbnTools
                 frm.FillObject(off);
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
+
+                    //var off1 = ((SessionItemViewModel)lsvOffers.SelectedItem).Object as Offer;
+                    //off1.Load(off._PhysicalPath , null);
+
+                    ((SessionItemViewModel)lsvOffers.SelectedItem).Object = frm.CurrentObject; 
                     // dataGridView1.Refresh();
                 }
 

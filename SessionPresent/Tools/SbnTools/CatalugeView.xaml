@@ -53,7 +53,7 @@
                  Style="{x:Null}" BorderBrush="{x:Null}" HorizontalGridLinesBrush="#FFA4B0DA">
             <DataGrid.Resources>
                 <ContextMenu x:Key="cmsMain" >
-                    <MenuItem Header="ویرایش" x:Name="mnuItmEdit" Click="mnuItmEdit_Click" Visibility="{Binding IsSessionManager, Converter={StaticResource VisiblityToBooleanConverter},Mode=OneWay,UpdateSourceTrigger=PropertyChanged, ElementName=userControl}"/>
+                    <MenuItem Header="ویرایش" x:Name="mnuItmEdit" Click="mnuItmEdit_Click" Visibility="{Binding IsSessionManager, Converter={StaticResource VisiblityToBooleanConverter},Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, ElementName=userControl}"/>
                 </ContextMenu>
             </DataGrid.Resources>
             <DataGrid.ItemContainerStyle >
@@ -193,7 +193,7 @@
                 <DataGridTemplateColumn Header="ارائه دهنده" MaxWidth="300" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Object.OwnerOrgan.CorrelateOrgUnit.Title}" TextWrapping="Wrap"  Margin="10" FontWeight="Bold"  VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Object.OwnerOrgan.CorrelateOrgUnit.Title, Mode=TwoWay}" TextWrapping="Wrap"  Margin="10" FontWeight="Bold"  VerticalAlignment="Center"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -202,7 +202,7 @@
 
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Object.Title}"  TextWrapping="Wrap" FontWeight="Bold" VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Object.Title , Mode=TwoWay}" TextWrapping="Wrap" FontWeight="Bold" VerticalAlignment="Center"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

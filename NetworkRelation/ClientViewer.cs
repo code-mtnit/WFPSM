@@ -93,8 +93,13 @@ namespace NetworkRelation
 
             try
             {
-                ClientInfo cInfo = new ClientInfo(m_TmpClientIP, m_TmpClientName, Consts.ClientStatus.Unknown);
-                ReplyDataObj = m_StatusBL.ExecuteQuery(m_AppDef.CurrCenter.IP, m_AppDef.m_Port, cInfo);
+                if (m_AppDef.CurrCenter != null)
+                {
+                    ClientInfo cInfo = new ClientInfo(m_TmpClientIP, m_TmpClientName, Consts.ClientStatus.Unknown);
+                    ReplyDataObj = m_StatusBL.ExecuteQuery(m_AppDef.CurrCenter.IP, m_AppDef.m_Port, cInfo);
+                }
+                else
+                    throw new Exception();
             }
             catch (Exception)
             {
