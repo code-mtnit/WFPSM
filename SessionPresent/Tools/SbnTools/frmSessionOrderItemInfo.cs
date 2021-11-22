@@ -63,6 +63,7 @@ namespace SessionPresent.Tools.SbnTools
                 CurrentCatalogueObject.Title = sessionItem.Title;
                 CurrentCatalogueObject.TitleBackColor = sessionItem.BackColor;
                 CurrentCatalogueObject.TitleForeColor = sessionItem.TitleForeColor;
+                CurrentCatalogueObject.TitleFontSize = sessionItem.TitleFontSize;
                 string[] p = ((Offer)sessionItem.Object)._PhysicalPath.Split('\\');
                 string pPath = "";
                 foreach(string s in p)
@@ -117,7 +118,8 @@ namespace SessionPresent.Tools.SbnTools
                     Title = txtTitle.Text,
                     OrderInSession = CurrentCatalogueObject.OrderInSession,
                     TitleBackColor = CurrentCatalogueObject.TitleBackColor,
-                    TitleForeColor = CurrentCatalogueObject.TitleForeColor
+                    TitleForeColor = CurrentCatalogueObject.TitleForeColor,
+                     TitleFontSize= CurrentCatalogueObject.TitleFontSize
                 };
 
                 sivm.Title = offTemp.Title;
@@ -146,7 +148,8 @@ namespace SessionPresent.Tools.SbnTools
                     Title = txtTitle.Text,
                     OrderInSession = CurrentPresentationObject.OrderInSession,
                     TitleBackColor = CurrentPresentationObject.TitleBackColor,
-                    TitleForeColor = CurrentPresentationObject.TitleForeColor
+                    TitleForeColor = CurrentPresentationObject.TitleForeColor,
+                     TitleFontSize = CurrentPresentationObject.TitleFontSize
                 };
                 sivm.Title = offTemp.Title;
 
@@ -176,7 +179,9 @@ namespace SessionPresent.Tools.SbnTools
                     Title = txtTitle.Text,
                     OrderInSession = CurrentPreSessionOrderObject.OrderInSession,
                     TitleBackColor = CurrentPreSessionOrderObject.TitleBackColor,
-                    TitleForeColor = CurrentPreSessionOrderObject.TitleForeColor
+                    TitleForeColor = CurrentPreSessionOrderObject.TitleForeColor,
+                    TitleFontSize = CurrentPresentationObject.TitleFontSize
+
                 };
                 sivm.Title = offTemp.Title;
 

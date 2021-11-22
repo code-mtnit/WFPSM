@@ -27,6 +27,7 @@ namespace SessionPresent.Tools
             set { _isCatalogue = value; }
         }
 
+
         #endregion // Data
 
         private string _title = "عنوان";

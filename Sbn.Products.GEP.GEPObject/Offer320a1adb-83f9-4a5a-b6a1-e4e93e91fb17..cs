@@ -72,6 +72,20 @@ namespace Sbn.Products.GEP.GEPObject
             }
         }
 
+        private Color _Color;
+        public Color Color
+        {
+            get
+            {
+                return _Color;
+            }
+
+            set
+            {
+                _Color  = value;
+            }
+        }
+
 
         public string TitleForeColor
         {

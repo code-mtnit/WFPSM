@@ -65,6 +65,7 @@
     <Compile Include="CancelCommissionSessionOrdersb8e6276b-a912-499d-8634-b6ef03017a.cs" />
     <Compile Include="Catalogue0392f175-77da-4fcf-bf12-8e9be0dff8ea..cs" />
     <Compile Include="Cataloguescbbb41f6-e69c-4696-b780-0bc90b8001b3..cs" />
+    <Compile Include="Color.cs" />
     <Compile Include="CommissionExpertceb4cc67-7201-4ae5-95e6-27e04a19d500..cs" />
     <Compile Include="CommissionExperts6dc0c0c2-bf4f-4515-beea-eeac534e836f..cs" />
     <Compile Include="CommissionSessionf6fb4dbc-f503-4ef8-afc6-caaf2f7c9976..cs" />

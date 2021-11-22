@@ -57,39 +57,45 @@ namespace SessionPresent.Tools.FolderLaws
             }
             else
             {
-
-                var file = new FileInfo(CurrentViewItem.Object.ToString());
-                //fDocReader.
-                if (file.Extension == ".rtf")
+                try
                 {
-                    WebBrowser1.Visibility = System.Windows.Visibility.Hidden;
-                    rch.Visibility = System.Windows.Visibility.Visible;
-
-                    TextRange textrange;
-                    FileStream FileStream1;
-
-                    textrange = new TextRange(rch.Document.ContentStart, rch.Document.ContentEnd);
-
-                    using (FileStream1 = new FileStream(CurrentViewItem.Object.ToString(), FileMode.OpenOrCreate))
+                    var file = new FileInfo(CurrentViewItem.Object.ToString());
+                    //fDocReader.
+                    if (file.Extension == ".rtf")
                     {
-                        textrange.Load(FileStream1, System.Windows.DataFormats.Rtf);
+                        WebBrowser1.Visibility = System.Windows.Visibility.Hidden;
+                        rch.Visibility = System.Windows.Visibility.Visible;
+
+                        TextRange textrange;
+                        FileStream FileStream1;
+
+                        textrange = new TextRange(rch.Document.ContentStart, rch.Document.ContentEnd);
+
+                        using (FileStream1 = new FileStream(CurrentViewItem.Object.ToString(), FileMode.OpenOrCreate))
+                        {
+                            textrange.Load(FileStream1, System.Windows.DataFormats.Rtf);
+                        }
+                    }
+                    else if (file.Extension == ".htm" || file.Extension == ".html")
+                    {
+                        rch.Visibility = System.Windows.Visibility.Hidden;
+                        WebBrowser1.Visibility = System.Windows.Visibility.Visible;
+
+                        System.Uri uri = new System.Uri(file.FullName);
+                        WebBrowser1.Navigate(uri);
+                    }
+                    else if (file.Extension == ".mht")
+                    {
+                        rch.Visibility = System.Windows.Visibility.Hidden;
+                        WebBrowser1.Visibility = System.Windows.Visibility.Visible;
+
+                        System.Uri uri = new System.Uri(file.FullName);
+                        WebBrowser1.Navigate(uri);
                     }
                 }
-                else if (file.Extension == ".htm" || file.Extension == ".html")
+                catch
                 {
-                    rch.Visibility = System.Windows.Visibility.Hidden;
-                    WebBrowser1.Visibility = System.Windows.Visibility.Visible;
 
-                    System.Uri uri = new System.Uri(file.FullName);
-                    WebBrowser1.Navigate(uri);
-                }
-                else if (file.Extension == ".mht" )
-                {
-                    rch.Visibility = System.Windows.Visibility.Hidden;
-                    WebBrowser1.Visibility = System.Windows.Visibility.Visible;
-
-                    System.Uri uri = new System.Uri(file.FullName);
-                    WebBrowser1.Navigate(uri);
                 }
             }
         }

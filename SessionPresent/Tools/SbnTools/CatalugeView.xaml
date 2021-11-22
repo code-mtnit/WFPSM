@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Tools="clr-namespace:SessionPresent.Tools" x:Name="userControl" 
+             xmlns:Converters="clr-namespace:SessionPresent.Tools.Converters"
              x:Class="SessionPresent.Tools.SbnTools.CatalugeView" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="1000"  Background="#FFD0E685"
@@ -11,6 +12,7 @@
     <UserControl.Resources>
 
         <Tools:VisiblityToBooleanConverter x:Key="VisiblityToBooleanConverter"/>
+        <Converters:ColorNameToSolidBrushConverter x:Key="ColorNameToSolidBrushConverter"/>
 
 
     </UserControl.Resources>
@@ -64,6 +66,8 @@
                 <Style TargetType="{x:Type DataGridRow}"  >
                     <Setter Property="ContextMenu" Value="{StaticResource ResourceKey=cmsMain}"/>
                     <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Background" Value="{Binding Path=TitleBackColor , Converter={StaticResource ColorNameToSolidBrushConverter}}"/>
+                    <Setter Property="Foreground" Value="{Binding Path=TitleForeColor , Converter={StaticResource ColorNameToSolidBrushConverter}}"/>
                     <EventSetter Event="UIElement.PreviewMouseLeftButtonDown" Handler="lsvOffers_MouseLeftButtonDown"/>
                     <Setter Property="Template">
                         <Setter.Value>
@@ -199,12 +203,12 @@
                 </DataGridTemplateColumn>
 
                 <DataGridTemplateColumn Header="عنوان"  Width="*" FrameworkElement.FlowDirection="RightToLeft">
-
                     <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
+                    <DataTemplate>
                             <TextBlock Text="{Binding Object.Title , Mode=TwoWay}" TextWrapping="Wrap" FontWeight="Bold" VerticalAlignment="Center"/>
-                        </DataTemplate>
+                    </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
+                    
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="کد"  >
                     <DataGridTemplateColumn.CellTemplate>

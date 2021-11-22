@@ -18,6 +18,20 @@ namespace Sbn.Products.GEP.GEPObject
         private string _Title;
         private string _TitleBackColor;
         private string _TitleForeColor;
+        private Single _TitleFontSize;
+        public Single TitleFontSize
+        {
+            get
+            {
+                return _TitleFontSize;
+            }
+
+            set
+            {
+                _TitleFontSize = value;
+            }
+        }
+
         public string TitleBackColor
         {
             get

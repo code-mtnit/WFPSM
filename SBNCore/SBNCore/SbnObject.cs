@@ -653,13 +653,19 @@ namespace Sbn.Core
                                 long l = long.Parse(sValue);
                                 pInfo.SetValue(this, l, null);
                             }
-                            else if (dtype == typeof(System.Int32) && !object.ReferenceEquals(sValue, null))
-                            {
-                                int l = int.Parse(sValue);
-                                pInfo.SetValue(this, l, null);
+                        else if (dtype == typeof(System.Int32) && !object.ReferenceEquals(sValue, null))
+                        {
+                            int l = int.Parse(sValue);
+                            pInfo.SetValue(this, l, null);
 
-                            }
-                            else if (dtype.BaseType == typeof(Enum) && !object.ReferenceEquals(sValue, null))
+                        }
+                        else if (dtype == typeof(System.Single) && !object.ReferenceEquals(sValue, null))
+                        {
+                            float l = float.Parse(sValue);
+                            pInfo.SetValue(this, l, null);
+
+                        }
+                        else if (dtype.BaseType == typeof(Enum) && !object.ReferenceEquals(sValue, null))
                             {
                                 object oVal = Enum.Parse(dtype ,sValue);
                                 pInfo.SetValue(this, oVal, null);
@@ -724,7 +730,7 @@ namespace Sbn.Core
                             Type dtype = pInfo.PropertyType;
 
                             if (dtype != typeof(string) && dtype != typeof(System.Byte[]) && dtype != typeof(System.Guid) &&
-                                dtype != typeof(System.Int64) && dtype != typeof(System.Int32)
+                                dtype != typeof(System.Int64) && dtype != typeof(System.Int32) && dtype != typeof(System.Single)
                             && dtype != typeof(SbnBoolean)
                             && dtype != typeof(RequestArgs)
                                 && dtype != typeof(SbnOwnershipDomain))

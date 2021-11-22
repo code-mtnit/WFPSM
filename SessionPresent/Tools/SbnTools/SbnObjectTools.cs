@@ -77,8 +77,9 @@ namespace SessionPresent.Tools.SbnTools
                             itmOff.RefrenceAssemblly = "SessionPresent";
                             itmOff.BallotViewerClassName = "SessionPresent.Tools.SbnTools.GovSessionMemberOpinionView";
                             itmOff.IsVisibleInSessionOrderTree = true;
-                            itmOff.TitleForeColor = (off.TitleForeColor != null ? off.TitleForeColor : "Black");
-                            itmOff.TitleBackColor = (off.TitleBackColor != null ? off.TitleBackColor : "White");
+                            itmOff.TitleForeColor = (off.Color != null ? off.Color.TitleBackColor : "Black");
+                            itmOff.TitleBackColor = (off.Color != null ? off.Color.TitleBackColor : "White");
+                            itmOff.TitleFontSize = (cat.TitleFontSize > 5 ? cat.TitleFontSize : 20);
                             AllObj.Add(itmOff);
                         }
                         else
@@ -90,7 +91,7 @@ namespace SessionPresent.Tools.SbnTools
                             itmCat.ObjectViewer = objViewerCat;
                             itmCat.TitleForeColor = (cat.TitleForeColor != null ? cat.TitleForeColor : "Black");
                             itmCat.TitleBackColor = (cat.TitleBackColor != null ? cat.TitleBackColor : "White");
-
+                            itmCat.TitleFontSize = (cat.TitleFontSize > 5 ? cat.TitleFontSize : 20);
                             itmCat.IsCatalogue = true;
 
                             var objViewerOffer = new SbnTools.OfferView();
@@ -109,8 +110,9 @@ namespace SessionPresent.Tools.SbnTools
                                 itmOff.RefrenceAssemblly = "SessionPresent";
                                 itmOff.BallotViewerClassName = "SessionPresent.Tools.SbnTools.GovSessionMemberOpinionView";
                                 itmOff.IsVisibleInSessionOrderTree = false;
-                                itmOff.TitleForeColor = (off.TitleForeColor != null ? off.TitleForeColor : "Black");
-                                itmOff.TitleBackColor = (off.TitleBackColor != null ? off.TitleBackColor : "White");
+                                itmOff.TitleForeColor = (off.Color != null ? off.Color.TitleBackColor : "Black");
+                                itmOff.TitleBackColor = (off.Color != null ? off.Color.TitleBackColor : "White");
+                                itmCat.TitleFontSize = (cat.TitleFontSize > 5 ? cat.TitleFontSize : 20);
 
                                 AllObjOffer.Add(itmOff);
 
@@ -162,6 +164,7 @@ namespace SessionPresent.Tools.SbnTools
                         itmCat.ObjectViewer = objViewerPrs;// new SbnTools.PresentationView(); ; 
                         itmCat.TitleForeColor = (cat.TitleForeColor != null ? cat.TitleForeColor : "Black");
                         itmCat.TitleBackColor = (cat.TitleBackColor != null ? cat.TitleBackColor : "White");
+                        itmCat.TitleFontSize = (cat.TitleFontSize > 5 ? cat.TitleFontSize : 20);
 
 
                         var AllObjOffer = new List<SessionItemViewModel>();
@@ -176,6 +179,7 @@ namespace SessionPresent.Tools.SbnTools
                                 itmPrs.Order = prs.OrderInSession;
                                 itmPrs.TitleForeColor = (prs.TitleForeColor != null ? prs.TitleForeColor : "Black");
                                 itmPrs.TitleBackColor = (prs.TitleBackColor != null ? prs.TitleBackColor : "White");
+                                itmPrs.TitleFontSize = (cat.TitleFontSize > 5 ? cat.TitleFontSize : 20);
 
                                 AllObjOffer.Add(itmPrs);
                             }
@@ -202,6 +206,7 @@ namespace SessionPresent.Tools.SbnTools
                         itmPrs.Order = prs.OrderInSession;
                         itmPrs.TitleForeColor = (prs.TitleForeColor != null ? prs.TitleForeColor : "Black");
                         itmPrs.TitleBackColor = (prs.TitleBackColor != null ? prs.TitleBackColor : "White");
+                        itmPrs.TitleFontSize = (prs.TitleFontSize > 5 ? prs.TitleFontSize : 20);
 
                         AllObj.Add(itmPrs);
                     }

@@ -109,8 +109,8 @@ namespace SessionPresent
             }
         }
 
-        private Color _MessageForeColor = Color.Black;
-        public Color MessageForeColor
+        private System.Drawing.Color _MessageForeColor = System.Drawing.Color.Black;
+        public System.Drawing.Color MessageForeColor
         {
             get { return _MessageForeColor; }
             set
@@ -132,8 +132,8 @@ namespace SessionPresent
         }
 
 
-        private Color _MessageBackColor = Color.White;
-        public Color MessageBackColor
+        private System.Drawing.Color _MessageBackColor = System.Drawing.Color.White;
+        public System.Drawing.Color MessageBackColor
         {
             get { return _MessageBackColor; }
             set

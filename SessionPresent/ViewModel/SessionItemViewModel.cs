@@ -156,7 +156,12 @@ namespace SessionPresent.ViewModel
             }
         }
 
-
+        Single _titleFontSize;
+        public Single TitleFontSize
+        {
+            get { return _titleFontSize; }
+            set { _titleFontSize = value; }
+        }
         public string TitleForeColor
         {
             get

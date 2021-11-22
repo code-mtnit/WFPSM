@@ -183,7 +183,7 @@ namespace SessionPresent
                     if (dir.IndexOf("پیامها") >= 0) continue;
 
                     var tt = Path.GetFileNameWithoutExtension(dir);
-                    var itm2 = new SessionItemViewModel { Title = Path.GetFileNameWithoutExtension(dir), ObjectViewer = new SessionPresent.Tools.FolderLaws.LawsSearchView() , TitleForeColor = "Black"  , TitleBackColor= "White"};
+                    var itm2 = new SessionItemViewModel { Title = Path.GetFileNameWithoutExtension(dir), ObjectViewer = new SessionPresent.Tools.FolderLaws.LawsSearchView() , TitleForeColor = "Black"  , TitleBackColor= "White" , TitleFontSize=20};
                     var files = System.IO.Directory.GetFiles(dir);
 
                     var lawViewer = new Tools.FolderLaws.LawView();
@@ -208,6 +208,7 @@ namespace SessionPresent
                         sItm.ObjectViewer = lawViewer;
                         sItm.TitleForeColor = "Black";
                         sItm.TitleBackColor = "White";
+                        sItm.TitleFontSize = 20;
                         itm2.Children.Add(sItm);
 
                     }
@@ -254,6 +255,7 @@ namespace SessionPresent
                             itm2.BackColor = System.Drawing.Color.DarkTurquoise.Name;
 
                         }
+                        itm2.TitleFontSize = 20;
                         vm.Children.Add(itm2);
 
                     }
@@ -262,7 +264,7 @@ namespace SessionPresent
                         itm2.ItemIcon = "FolderOpen";
                         itm2.ItemWidth = 200;
                         itm2.BackColor = System.Drawing.Color.DarkTurquoise.Name;
-                        
+                        itm2.TitleFontSize = 20;
 
                         vm.Children.Add(itm2);
                     }
@@ -322,6 +324,7 @@ namespace SessionPresent
                 */
                 //govOrder.Children.RemoveAt(0);
                 quranItm.Order = iOrder++;
+                quranItm.TitleFontSize = 20;
                 govOrder.Children.Insert(0, quranItm);
 
             }
@@ -402,6 +405,7 @@ namespace SessionPresent
                     newsItm.Object = sfile;
                     newsItm.ObjectViewer = quranViewer;
                     newsItm.IsVisibleInSessionOrderTree = false;
+                    newsParent.TitleFontSize = 20;
                     newsParent.Children.Add(newsItm);
                 }
                 //if (NewsItem != null)
@@ -423,6 +427,7 @@ namespace SessionPresent
                                         newsParent.TitleBackColor = "White";
                                         newsParent.TitleForeColor = "Black";
                                     }
+                                    newsParent.TitleFontSize = 20;
                                 }
                             }
 
@@ -433,6 +438,8 @@ namespace SessionPresent
                                     newsParent.TitleBackColor = ((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[0]).TitleBackColor;
                                     newsParent.TitleForeColor = ((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[0]).TitleForeColor;
                                 }
+                                newsParent.TitleFontSize = 20;
+
                             }
                         }
 
@@ -461,7 +468,7 @@ namespace SessionPresent
                         var preOrderViewer = new Tools.FolderLaws.LawView();
                         preItem.TitleBackColor = pre.TitleBackColor;
                         preItem.TitleForeColor = pre.TitleForeColor;
-
+                        if (pre.TitleFontSize > 5) preItem.TitleFontSize = pre.TitleFontSize;  else preItem.TitleFontSize = 20;
                         preItem.Title = Path.GetFileNameWithoutExtension(fs[0]);
                         preItem.Object = fs[0];
                         preItem.ObjectViewer = preOrderViewer;
