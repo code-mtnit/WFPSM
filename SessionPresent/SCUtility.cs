@@ -420,30 +420,33 @@ namespace SessionPresent
                             {
                                 if (((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[1]).Title.Contains("اخبار"))
                                 {
-                                    newsParent.TitleBackColor = ((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[1]).TitleBackColor;
-                                    newsParent.TitleForeColor = ((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[1]).TitleForeColor;
-                                    if (newsParent.TitleForeColor == null)
-                                    {
-                                        newsParent.TitleBackColor = "White";
-                                        newsParent.TitleForeColor = "Black";
-                                    }
-                                    newsParent.TitleFontSize = 20;
+                                    newsParent.TitleBackColor = (((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[1]).TitleBackColor != "" ? ((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[1]).TitleBackColor : "White");
+                                    newsParent.TitleForeColor = (((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[1]).TitleForeColor != "" ? ((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[1]).TitleForeColor : "Black");
+                                    newsParent.TitleFontSize = (((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[1]).TitleFontSize >  5 ? ((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[1]).TitleFontSize : 20);
+
                                 }
                             }
 
                             if (gItm.PreOrders.Count == 1)
                             {
-                                if (((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[0]).Title.Contains("اخبار"))
-                                {
-                                    newsParent.TitleBackColor = ((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[0]).TitleBackColor;
-                                    newsParent.TitleForeColor = ((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[0]).TitleForeColor;
-                                }
-                                newsParent.TitleFontSize = 20;
+                                newsParent.TitleBackColor = (((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[0]).TitleBackColor != "" ? ((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[0]).TitleBackColor : "White");
+                                newsParent.TitleForeColor = (((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[0]).TitleForeColor != "" ? ((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[0]).TitleForeColor : "Black");
+                                newsParent.TitleFontSize = (((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[0]).TitleFontSize > 5 ? ((Sbn.Products.GEP.GEPObject.PreSessionOrder)orderedItems[0]).TitleFontSize : 20);
 
                             }
                         }
 
                         //govOrder.Children.RemoveAt(0);
+                        if (gItm.PreOrders.Count> 1 && (((Sbn.Products.GEP.GEPObject.PreSessionOrder)gItm.PreOrders[1]).Title.Contains("خبر") || ((Sbn.Products.GEP.GEPObject.PreSessionOrder)gItm.PreOrders[1]).Title.Contains("اخبار")))
+                        {
+                            newsParent.TitleBackColor = ((Sbn.Products.GEP.GEPObject.PreSessionOrder)gItm.PreOrders[1]).TitleBackColor;
+                            newsParent.TitleForeColor = ((Sbn.Products.GEP.GEPObject.PreSessionOrder)gItm.PreOrders[1]).TitleForeColor;
+                        }
+                        if (gItm.PreOrders.Count > 2 &&  (((Sbn.Products.GEP.GEPObject.PreSessionOrder)gItm.PreOrders[2]).Title.Contains("خبر") || ((Sbn.Products.GEP.GEPObject.PreSessionOrder)gItm.PreOrders[1]).Title.Contains("اخبار")))
+                        {
+                            newsParent.TitleBackColor = ((Sbn.Products.GEP.GEPObject.PreSessionOrder)gItm.PreOrders[2]).TitleBackColor;
+                            newsParent.TitleForeColor = ((Sbn.Products.GEP.GEPObject.PreSessionOrder)gItm.PreOrders[2]).TitleForeColor;
+                        }
                         govOrder.Children.Insert(1, newsParent);
                     }
                     else
@@ -468,7 +471,8 @@ namespace SessionPresent
                         var preOrderViewer = new Tools.FolderLaws.LawView();
                         preItem.TitleBackColor = pre.TitleBackColor;
                         preItem.TitleForeColor = pre.TitleForeColor;
-                        if (pre.TitleFontSize > 5) preItem.TitleFontSize = pre.TitleFontSize;  else preItem.TitleFontSize = 20;
+                        if (pre.TitleFontSize > 5) preItem.TitleFontSize = pre.TitleFontSize;  
+                        else preItem.TitleFontSize = 20;
                         preItem.Title = Path.GetFileNameWithoutExtension(fs[0]);
                         preItem.Object = fs[0];
                         preItem.ObjectViewer = preOrderViewer;

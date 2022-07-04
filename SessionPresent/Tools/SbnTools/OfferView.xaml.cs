@@ -83,6 +83,11 @@ namespace SessionPresent.Tools.SbnTools
             
         }
 
+        public Sbn.AdvancedControls.WordControlDocument.WordControlDocument getWordControl()
+        {
+            return this.UcViewGovReportTabTemplate1.ucWordDocEntityProp1.wordControlDocument1;
+        }
+
         public ArrayList GetMetaData()
         {
             var metas = new ArrayList();

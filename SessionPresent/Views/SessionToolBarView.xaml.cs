@@ -293,9 +293,20 @@ namespace SessionPresent.Views
            // OnGoBack(e);
             OnGoBack(e);
 
-            History<string>.IsActive = false;
-            this.bar.Path = History<string>.Undo();
-            History<string>.IsActive = true;
+            // added ghdr go back temporary
+            if (((MainViewModel)DataContext).CurrentViewItem.ObjectViewer.GetType().Name == "OfferView" 
+                && ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl()._clickCount > 0)
+            {
+                
+                ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl().GoBack();
+
+            }
+            else
+            {
+                History<string>.IsActive = false;
+                this.bar.Path = History<string>.Undo();
+                History<string>.IsActive = true;
+            }
         }
 
         public GovSession GetCurrnetSession()
@@ -360,11 +371,21 @@ namespace SessionPresent.Views
 
         private void Redo_Click(object sender, RoutedEventArgs e)
         {
-            
-            History<string>.IsActive = false;
-            this.bar.Path = History<string>.Redo();
-            History<string>.IsActive = true;
-            OnGoNext(e);
+
+            if (((MainViewModel)DataContext).CurrentViewItem.ObjectViewer.GetType().Name == "OfferView"
+                    && ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl()._clickCount > 0)
+            {
+
+                ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl().GoBack();
+
+            }
+            else
+            {
+                History<string>.IsActive = false;
+                this.bar.Path = History<string>.Redo();
+                History<string>.IsActive = true;
+                OnGoNext(e);
+            }
         }
 
         private void Button_MouseUp(object sender, MouseButtonEventArgs e)
