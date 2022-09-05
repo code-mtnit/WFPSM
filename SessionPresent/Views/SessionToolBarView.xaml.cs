@@ -469,6 +469,7 @@ namespace SessionPresent.Views
             try
             {
 
+
                 //ObjectMetaData ActiveSession = new ObjectMetaData();
                 //ActiveSession.Text = this._activeGovSession._PhysicalPath;
                 //ActiveSession.Tag = "ActiveSession";
