@@ -59,7 +59,14 @@ namespace SessionPresent.Tools.SbnTools
                     case "PageNumber":
                         if (int.TryParse(omd.Text, out pagenumber))
                         {
-
+                            if (pagenumber >= 0 && !IsVoewWordDoc)
+                            {
+                                UcViewGovReportTabTemplate1.ucViewGovReportPic1.BindingSource.Position = pagenumber;
+                            }
+                            if (pagenumber >= 0 && !IsVoewWordDoc)
+                            {
+                                UcViewGovReportTabTemplate1.ucWordDocEntityProp1.wordControlDocument1.document.ActiveWindow.ActivePane.Pages[pagenumber].Rectangles[1].Range.Select();
+                            }
                         }
                         break;                 
                     case "IsViewWordDoc":
@@ -73,10 +80,6 @@ namespace SessionPresent.Tools.SbnTools
                 }
             }
 
-            if (pagenumber >= 0)
-            {
-                UcViewGovReportTabTemplate1.ucViewGovReportPic1.BindingSource.Position = pagenumber;                
-            }
 
             UcViewGovReportTabTemplate1.IsViewWordDocument = IsVoewWordDoc;
 
@@ -94,12 +97,28 @@ namespace SessionPresent.Tools.SbnTools
             var PageNumber = new BaseClass.ObjectMetaData();
             PageNumber.Tag = "PageNumber";
             PageNumber.Text = this.UcViewGovReportTabTemplate1.ucViewGovReportPic1.BindingSource.Position.ToString();
-            metas.Add(PageNumber);
+
+            
 
             var IsViewWordDoc = new BaseClass.ObjectMetaData();
             IsViewWordDoc.Tag = "IsViewWordDoc";
             IsViewWordDoc.Text = UcViewGovReportTabTemplate1.IsViewWordDocument.ToString();
-            
+            if(UcViewGovReportTabTemplate1.IsViewWordDocument)
+            {
+                try
+                {
+                    var range = this.UcViewGovReportTabTemplate1.ucWordDocEntityProp1.wordControlDocument1.document.Range().GoTo(Microsoft.Office.Interop.Word.WdGoToItem.wdGoToPage, Microsoft.Office.Interop.Word.WdGoToDirection.wdGoToLast);
+                    var numPages = range.get_Information(Microsoft.Office.Interop.Word.WdInformation.wdActiveEndPageNumber);
+                    PageNumber.Text = numPages.ToString();
+                }
+                catch
+                {
+
+                }
+
+            }
+
+            metas.Add(PageNumber);
             metas.Add(IsViewWordDoc);
             return metas;
         }
