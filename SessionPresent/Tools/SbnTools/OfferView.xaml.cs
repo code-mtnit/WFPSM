@@ -54,29 +54,38 @@ namespace SessionPresent.Tools.SbnTools
 
             foreach (BaseClass.ObjectMetaData omd in MetaData)
             {
-                switch (omd.Tag)
-                {                 
-                    case "PageNumber":
-                        if (int.TryParse(omd.Text, out pagenumber))
-                        {
-                            if (pagenumber >= 0 && !IsVoewWordDoc)
+                try
+                {
+                    switch (omd.Tag)
+                    {
+                        case "PageNumber":
+                            if (int.TryParse(omd.Text, out pagenumber))
                             {
-                                UcViewGovReportTabTemplate1.ucViewGovReportPic1.BindingSource.Position = pagenumber;
-                            }
-                            if (pagenumber >= 0 && !IsVoewWordDoc)
-                            {
-                                UcViewGovReportTabTemplate1.ucWordDocEntityProp1.wordControlDocument1.document.ActiveWindow.ActivePane.Pages[pagenumber].Rectangles[1].Range.Select();
-                            }
-                        }
-                        break;                 
-                    case "IsViewWordDoc":
-                        if (bool.TryParse(omd.Text, out IsVoewWordDoc))
-                        {
+                                if (pagenumber >= 0 && !IsVoewWordDoc)
+                                {
+                                    UcViewGovReportTabTemplate1.ucViewGovReportPic1.BindingSource.Position = pagenumber;
+                                }
+                                if (pagenumber >= 0 && !IsVoewWordDoc)
+                                {
+                                    UcViewGovReportTabTemplate1.tabControl1.SelectedTab = UcViewGovReportTabTemplate1.tabControl1.TabPages[1];
 
-                        }
-                        break;
-                    default:
-                        break;
+                                    UcViewGovReportTabTemplate1.ucWordDocEntityProp1.wordControlDocument1.document.ActiveWindow.ActivePane.Pages[pagenumber].Rectangles[1].Range.Select();
+                                }
+                            }
+                            break;
+                        case "IsViewWordDoc":
+                            if (bool.TryParse(omd.Text, out IsVoewWordDoc))
+                            {
+
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                catch 
+                {
+
                 }
             }
 
