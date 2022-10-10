@@ -79,7 +79,7 @@ namespace SessionPresent
             this.dataGridClients.ColumnHeadersHeight = 32;
             this.dataGridClients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridClients.Location = new System.Drawing.Point(4, 24);
-            this.dataGridClients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridClients.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridClients.Name = "dataGridClients";
             this.dataGridClients.ReadOnly = true;
             this.dataGridClients.RowHeadersWidth = 100;
@@ -96,9 +96,9 @@ namespace SessionPresent
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.dataGridViewHostInformation);
             this.groupBox4.Location = new System.Drawing.Point(4, 171);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(333, 254);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
@@ -111,7 +111,7 @@ namespace SessionPresent
             this.dataGridViewHostInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHostInformation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewHostInformation.Location = new System.Drawing.Point(4, 24);
-            this.dataGridViewHostInformation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewHostInformation.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewHostInformation.Name = "dataGridViewHostInformation";
             this.dataGridViewHostInformation.ReadOnly = true;
             this.dataGridViewHostInformation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -128,9 +128,9 @@ namespace SessionPresent
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtTo);
             this.groupBox1.Location = new System.Drawing.Point(46, 54);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(286, 108);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
@@ -140,7 +140,7 @@ namespace SessionPresent
             // 
             this.txtFrom.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtFrom.Location = new System.Drawing.Point(9, 28);
-            this.txtFrom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFrom.Margin = new System.Windows.Forms.Padding(4);
             this.txtFrom.MaxLength = 15;
             this.txtFrom.Name = "txtFrom";
             this.txtFrom.Size = new System.Drawing.Size(194, 27);
@@ -171,7 +171,7 @@ namespace SessionPresent
             // txtTo
             // 
             this.txtTo.Location = new System.Drawing.Point(9, 66);
-            this.txtTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTo.Margin = new System.Windows.Forms.Padding(4);
             this.txtTo.MaxLength = 15;
             this.txtTo.Name = "txtTo";
             this.txtTo.Size = new System.Drawing.Size(194, 27);
@@ -191,9 +191,9 @@ namespace SessionPresent
             this.groupBox3.Controls.Add(this.dataGridClients);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 25);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox3.Size = new System.Drawing.Size(613, 405);
             this.groupBox3.TabIndex = 27;
@@ -204,7 +204,7 @@ namespace SessionPresent
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -325,7 +325,7 @@ namespace SessionPresent
             this.tstxtPort.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tstxtPort.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tstxtPort.Name = "tstxtPort";
-            this.tstxtPort.Size = new System.Drawing.Size(148, 23);
+            this.tstxtPort.Size = new System.Drawing.Size(148, 25);
             this.tstxtPort.Visible = false;
             // 
             // tsbtnSave
@@ -367,7 +367,7 @@ namespace SessionPresent
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.lblRec);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmClientsList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ShowInTaskbar = false;

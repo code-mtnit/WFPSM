@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SessionPresent"
-             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:AddressBar="clr-namespace:Sbn.Controls.AdvancedControls.AddressBar;assembly=AddressBar"
              xmlns:Tools="clr-namespace:SessionPresent.Tools" x:Class="SessionPresent.Views.SessionToolBarView"
@@ -92,6 +91,13 @@
                             <Label Content="بستن"/>
                         </StackPanel>
                     </Button>
+                    <Button Click="btnFirstDoc_Click"  x:Name="btnFirstDoc" >
+                        <StackPanel Orientation="Horizontal">
+                            <!--<Image Height="21" Width="24" Source="/SessionPresent;component/Images/Sync.png" />-->
+                            <iconPacks:PackIconMaterial Kind="ArrowUp" VerticalAlignment="Center" />
+                            <Label Content="ابتدای گزارش"/>
+                        </StackPanel>
+                    </Button>                    
                     <Button Click="Redo_Click" Background="{x:Null}">
                         <StackPanel Orientation="Horizontal" Width="25" ToolTip="بعدی">
                             <iconPacks:PackIconMaterial Kind="ArrowRightBoldCircleOutline" VerticalAlignment="Center" />

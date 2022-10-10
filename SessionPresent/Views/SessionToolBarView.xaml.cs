@@ -684,6 +684,31 @@ namespace SessionPresent.Views
             frm.Dispose();
 
         }
+
+        private void btnSync_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnFirstDoc_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (((MainViewModel)DataContext).CurrentViewItem.ObjectViewer.GetType().Name == "OfferView"
+                    && ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl() != null)
+            {
+
+                ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl().GoFirstDoc();
+
+            }
+
+            if (((MainViewModel)DataContext).CurrentViewItem.ObjectViewer.GetType().Name == "OfferView")
+            {
+                ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).UcViewGovReportTabTemplate1.ucViewGovReportPic1.BindingSource.Position = 0;
+                //((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).UcViewGovReportTabTemplate1.ucViewGovReportPic1.Refresh();
+
+            }
+
+        }
     }
 }
 

@@ -78,6 +78,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Printing">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -99,21 +100,23 @@
     <Compile Include="WinWordView.xaml.cs">
       <DependentUpon>WinWordView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WordDocViewer.cs">
+    <Compile Include="WordControlDocument.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="WordControlDocument.cs">
+    <Compile Include="WordControlDocument.Designer.cs">
+      <DependentUpon>WordControlDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WordDocViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="WinWordLoader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="WordDocViewer.resx">
-      <DependentUpon>WordDocViewer.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="WordControlDocument.resx">
       <DependentUpon>WordControlDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WordDocViewer.resx">
+      <DependentUpon>WordDocViewer.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -127,6 +130,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

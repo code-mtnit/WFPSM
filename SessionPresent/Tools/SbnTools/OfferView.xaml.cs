@@ -51,7 +51,7 @@ namespace SessionPresent.Tools.SbnTools
           
             int pagenumber = -1;
             bool IsVoewWordDoc = false;
-
+            int MaxLoop = 0;
             foreach (BaseClass.ObjectMetaData omd in MetaData)
             {
                 try
@@ -65,19 +65,39 @@ namespace SessionPresent.Tools.SbnTools
                                 {
                                     UcViewGovReportTabTemplate1.ucViewGovReportPic1.BindingSource.Position = pagenumber;
                                 }
-                                if (pagenumber >= 0 && !IsVoewWordDoc)
-                                {
-                                    UcViewGovReportTabTemplate1.tabControl1.SelectedTab = UcViewGovReportTabTemplate1.tabControl1.TabPages[1];
-
-                                    UcViewGovReportTabTemplate1.ucWordDocEntityProp1.wordControlDocument1.document.ActiveWindow.ActivePane.Pages[pagenumber].Rectangles[1].Range.Select();
-                                }
                             }
                             break;
                         case "IsViewWordDoc":
                             if (bool.TryParse(omd.Text, out IsVoewWordDoc))
                             {
+                                if (pagenumber >= 0 && IsVoewWordDoc)
+                                {
+                                    /*  comment 14010719
+                                    UcViewGovReportTabTemplate1.tabControl1.SelectedTab = UcViewGovReportTabTemplate1.tabControl1.TabPages[1];
+                                    while (UcViewGovReportTabTemplate1.ucWordDocEntityProp1.wordControlDocument1.document == null && MaxLoop++ < 5)
+                                    {
+
+                                        System.Threading.Thread.Sleep(1000);
+                                    }
+
+                                    if (UcViewGovReportTabTemplate1.ucWordDocEntityProp1.wordControlDocument1.document != null)
+                                    {
+                                        UcViewGovReportTabTemplate1.ucWordDocEntityProp1.wordControlDocument1.document.ActiveWindow.ActivePane.View.Type = Microsoft.Office.Interop.Word.WdViewType.wdPrintView;
+
+                                        UcViewGovReportTabTemplate1.ucWordDocEntityProp1.wordControlDocument1.document.ActiveWindow.ActivePane.Pages[pagenumber].Rectangles[1].Range.Select();
+                                    }
+                                    */
+                                }
 
                             }
+                            break;
+                        case "DocItemPositionWebBrowser":
+
+                            var doc = UcViewGovReportTabTemplate1.webBrowser1.Document;
+
+                            var p = Point.Parse(omd.Text);
+                            if (doc != null && p != null)
+                                ((System.Windows.Forms.HtmlDocument)doc).Window.ScrollTo((int)p.X, (int)p.Y);
                             break;
                         default:
                             break;
@@ -112,7 +132,8 @@ namespace SessionPresent.Tools.SbnTools
             var IsViewWordDoc = new BaseClass.ObjectMetaData();
             IsViewWordDoc.Tag = "IsViewWordDoc";
             IsViewWordDoc.Text = UcViewGovReportTabTemplate1.IsViewWordDocument.ToString();
-            if(UcViewGovReportTabTemplate1.IsViewWordDocument)
+    /*        commented 14010719
+             if(UcViewGovReportTabTemplate1.IsViewWordDocument)
             {
                 try
                 {
@@ -125,10 +146,35 @@ namespace SessionPresent.Tools.SbnTools
 
                 }
 
-            }
+            }*/
 
+            if (UcViewGovReportTabTemplate1.IsViewWordDocument)
+            {
+                try
+                {
+                    var doc = UcViewGovReportTabTemplate1.webBrowser1.Document ;
+                    if (doc != null)
+                    {
+
+                        var DocItemPosition = new BaseClass.ObjectMetaData();
+                        DocItemPosition.Tag = "DocItemPositionWebBrowser";
+                        DocItemPosition.Text = new Point( Double.Parse( ((System.Windows.Forms.HtmlDocument) doc).Window.Document.Body.GetAttribute("ScrollLeft").ToString()), Double.Parse(((System.Windows.Forms.HtmlDocument) doc).Window.Document.Body.GetAttribute("ScrollTop"))).ToString();
+
+                        metas.Add(DocItemPosition);
+                    }
+                }
+                catch
+                {
+
+                }
+
+
+
+
+            }
             metas.Add(PageNumber);
             metas.Add(IsViewWordDoc);
+
             return metas;
         }
 
