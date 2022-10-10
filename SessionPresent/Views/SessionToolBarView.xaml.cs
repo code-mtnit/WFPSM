@@ -701,6 +701,14 @@ namespace SessionPresent.Views
 
             }
 
+            if (((MainViewModel)DataContext).CurrentViewItem.ObjectViewer.GetType().Name == "OfferView"
+                && ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getHtmlDocument() != null)
+            {
+
+                ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getHtmlDocument().Window.ScrollTo(0, 0);
+
+            }
+
             if (((MainViewModel)DataContext).CurrentViewItem.ObjectViewer.GetType().Name == "OfferView")
             {
                 ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).UcViewGovReportTabTemplate1.ucViewGovReportPic1.BindingSource.Position = 0;

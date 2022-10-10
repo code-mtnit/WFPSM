@@ -120,6 +120,11 @@ namespace SessionPresent.Tools.SbnTools
             return this.UcViewGovReportTabTemplate1.ucWordDocEntityProp1.wordControlDocument1;
         }
 
+
+        public System.Windows.Forms.HtmlDocument getHtmlDocument()
+        {
+            return this.UcViewGovReportTabTemplate1.webBrowser1.Document;
+        }
         public ArrayList GetMetaData()
         {
             var metas = new ArrayList();

@@ -99,7 +99,8 @@
                         </StackPanel>
                     </Button>                    
                     <Button Click="Redo_Click" Background="{x:Null}">
-                        <StackPanel Orientation="Horizontal" Width="25" ToolTip="بعدی">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="بعدی" />
                             <iconPacks:PackIconMaterial Kind="ArrowRightBoldCircleOutline" VerticalAlignment="Center" />
                             <!--<Image Height="21" Width="24"  Source="/SessionPresent;component/Images/next.png"/>-->
                         </StackPanel>
