@@ -77,6 +77,8 @@ namespace SessionPresent.Tools.SbnTools
                       //  ms = new 
                         //this.CurrentImageTools.BaseTools.GetStreamImage()
                     }
+
+                    ImageViewer.FitToWidth();
                 }
                 catch
                 {
@@ -184,6 +186,7 @@ namespace SessionPresent.Tools.SbnTools
 
                     if (AllowViewContinusePages)
                         ImageViewer.ViewContinusePages = AllowViewContinusePages;
+
                     ImageViewer.FitToWidth();
                     
                     //if (imgs.Length <= 1)

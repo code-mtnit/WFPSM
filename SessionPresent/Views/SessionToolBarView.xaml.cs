@@ -290,25 +290,31 @@ namespace SessionPresent.Views
 
         private void Undo_Click(object sender, RoutedEventArgs e)
         {
-           // OnGoBack(e);
-            OnGoBack(e);
-
-            // added ghdr go back temporary
-            if (((MainViewModel)DataContext).CurrentViewItem.ObjectViewer.GetType().Name == "OfferView" 
-                && ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl()._clickCount > 0)
+            try
             {
-                
-                ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl().GoBack();
+                // OnGoBack(e);
+                OnGoBack(e);
 
+                // added ghdr go back temporary
+                if (((MainViewModel)DataContext).CurrentViewItem.ObjectViewer.GetType().Name == "OfferView"
+                    && ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl()._clickCount > 0)
+                {
+
+                    ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl().GoBack();
+
+                }
+                else
+                {
+                    History<string>.IsActive = false;
+                    this.bar.Path = History<string>.Undo();
+                    History<string>.IsActive = true;
+                }
             }
-            else
+            catch(Exception ex)
             {
-                History<string>.IsActive = false;
-                this.bar.Path = History<string>.Undo();
-                History<string>.IsActive = true;
+
             }
         }
-
         public GovSession GetCurrnetSession()
         {
             bool check = true;
@@ -371,20 +377,26 @@ namespace SessionPresent.Views
 
         private void Redo_Click(object sender, RoutedEventArgs e)
         {
-
-            if (((MainViewModel)DataContext).CurrentViewItem.ObjectViewer.GetType().Name == "OfferView"
-                    && ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl()._clickCount > 0)
+            try
             {
+                if (((MainViewModel)DataContext).CurrentViewItem.ObjectViewer.GetType().Name == "OfferView"
+                        && ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl()._clickCount > 0)
+                {
 
-                ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl().GoBack();
+                    ((OfferView)((MainViewModel)DataContext).CurrentViewItem.ObjectViewer).getWordControl().GoBack();
 
+                }
+                else
+                {
+                    History<string>.IsActive = false;
+                    this.bar.Path = History<string>.Redo();
+                    History<string>.IsActive = true;
+                    OnGoNext(e);
+                }
             }
-            else
+            catch
             {
-                History<string>.IsActive = false;
-                this.bar.Path = History<string>.Redo();
-                History<string>.IsActive = true;
-                OnGoNext(e);
+
             }
         }
 
@@ -497,11 +509,21 @@ namespace SessionPresent.Views
                 //}
                 //IsViewWordDoc.Tag = "IsViewWordDoc";
                 //StatusQueryData.ArrCounter.Add(IsViewWordDoc);
-             
                 //StatusQueryData.CurrClient = clientInfo;
                 string QueryString = StatusQueryData.Serialize();
+
                 String ReplyString = Comm.SendQuery(CliInfoS.IP, SCUtility.m_AppDef.m_Port, QueryString);
                 ReplyDataObj = ReplyData.Deserialize(ReplyString);
+
+               // if (StatusQueryData.ArrCounter.Count == 4)
+               // {
+               //     if(((ObjectMetaData)StatusQueryData.ArrCounter[3]).Tag.ToString() == "IsViewWordDoc")
+               //     {
+               //         Thread.Sleep(100);
+               //         ReplyString = Comm.SendQuery(CliInfoS.IP, SCUtility.m_AppDef.m_Port, QueryString);
+               //         ReplyDataObj = ReplyData.Deserialize(ReplyString);
+               //     }
+               //}
 
             }
             catch (Exception)

@@ -20,8 +20,8 @@
 
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <DockPanel>
-                <Menu Background="{x:Null}" Margin="5" >
+            <DockPanel Grid.ColumnSpan="2" Margin="0,0,82,0">
+                <Menu Background="{x:Null}" Margin="5" Width="520" >
                     <MenuItem Height="32" Name="mnuItmBack" Click="mnuItmBack_Click"  Header="قبلی" >
                         <MenuItem.Icon>
                             <Image  Source="/SessionPresent;component/Images/arrow_right_alt1_32x32.png" />
@@ -43,7 +43,7 @@
                             <Image  Source="/SessionPresent;component/Images/arrow_up_32x32.png" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem>
+                    <MenuItem Width="149">
                         <TextBox Width="200"></TextBox>
                     </MenuItem>
                 </Menu>

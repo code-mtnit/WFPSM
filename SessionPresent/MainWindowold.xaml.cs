@@ -413,6 +413,11 @@ namespace SessionPresent
             //    UpdateStatus(e.QueryData);
             //}
             this.Dispatcher.Invoke(UpdateStatus, new object[] { e.QueryData });
+
+            System.Threading.Thread.Sleep(2000);
+
+            this.Dispatcher.Invoke(UpdateStatus, new object[] { e.QueryData });
+
         }
 
         delegate void UpdateStatusDelegate(BaseClass.QueryData ReplyDataObj);
