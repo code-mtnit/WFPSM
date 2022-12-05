@@ -127,8 +127,9 @@ namespace SessionPresent.Tools.SbnTools
                                 if (body != null)
                                 {
                                     //                    Point pos = new Point(Double.Parse(((System.Windows.Forms.HtmlDocument)doc).Window.Document.Body.GetAttribute("ScrollLeft").ToString()), Double.Parse(((System.Windows.Forms.HtmlDocument)doc).Window.Document.Body.GetAttribute("ScrollTop")));
-
-                                    body
+                                   
+                                    body.Style = "zoom:100%;";
+                                    //body.Style = "zoom:100%;";
                                     ((System.Windows.Forms.HtmlDocument)doc).Window.ScrollTo((int)p.X, (int)p.Y);
 
                                 }
