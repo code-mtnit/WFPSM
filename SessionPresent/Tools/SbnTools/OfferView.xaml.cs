@@ -12,7 +12,6 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SessionPresent.ViewModel;
@@ -127,11 +126,18 @@ namespace SessionPresent.Tools.SbnTools
                                 if (body != null)
                                 {
                                     //                    Point pos = new Point(Double.Parse(((System.Windows.Forms.HtmlDocument)doc).Window.Document.Body.GetAttribute("ScrollLeft").ToString()), Double.Parse(((System.Windows.Forms.HtmlDocument)doc).Window.Document.Body.GetAttribute("ScrollTop")));
-                                   
-                                    body.Style = "zoom:100%;";
+
+                                    
+                                    var browser = UcViewGovReportTabTemplate1.webBrowser1.ActiveXInstance as SHDocVw.InternetExplorer;
+                                    browser.ExecWB(SHDocVw.OLECMDID.OLECMDID_OPTICAL_ZOOM, SHDocVw.OLECMDEXECOPT.OLECMDEXECOPT_DODEFAULT, 100, IntPtr.Zero);
+
+                                    //body.Style = "";
+                                    //body.Style = "ZOOM:100%;";
+//                                    body.Document.Body.Style = "zoom:100%;";
                                     //body.Style = "zoom:100%;";
                                     ((System.Windows.Forms.HtmlDocument)doc).Window.ScrollTo((int)p.X, (int)p.Y);
 
+                                    break;
                                 }
                                 System.Threading.Thread.Sleep(1000);
 
