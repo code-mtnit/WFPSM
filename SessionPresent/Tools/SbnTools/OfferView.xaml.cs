@@ -52,6 +52,20 @@ namespace SessionPresent.Tools.SbnTools
             int pagenumber = -1;
             bool IsVoewWordDoc = false;
             int MaxLoop = 0;
+            string zoomLevel = "100";
+
+
+            foreach (BaseClass.ObjectMetaData omd in MetaData)
+            {
+                switch (omd.Tag)
+                {
+                    case "DocItemZoomWebBrowser":
+                        zoomLevel = omd.Text;
+                        break;
+
+                }
+
+            }
             foreach (BaseClass.ObjectMetaData omd in MetaData)
             {
                 try
@@ -125,16 +139,9 @@ namespace SessionPresent.Tools.SbnTools
                                 var body = ((System.Windows.Forms.HtmlDocument)doc).Window.Document.Body;
                                 if (body != null)
                                 {
-                                    //                    Point pos = new Point(Double.Parse(((System.Windows.Forms.HtmlDocument)doc).Window.Document.Body.GetAttribute("ScrollLeft").ToString()), Double.Parse(((System.Windows.Forms.HtmlDocument)doc).Window.Document.Body.GetAttribute("ScrollTop")));
-
-                                    
                                     var browser = UcViewGovReportTabTemplate1.webBrowser1.ActiveXInstance as SHDocVw.InternetExplorer;
-                                    browser.ExecWB(SHDocVw.OLECMDID.OLECMDID_OPTICAL_ZOOM, SHDocVw.OLECMDEXECOPT.OLECMDEXECOPT_DODEFAULT, 100, IntPtr.Zero);
+                                    browser.ExecWB(SHDocVw.OLECMDID.OLECMDID_OPTICAL_ZOOM, SHDocVw.OLECMDEXECOPT.OLECMDEXECOPT_DODEFAULT, int.Parse(zoomLevel), IntPtr.Zero);
 
-                                    //body.Style = "";
-                                    //body.Style = "ZOOM:100%;";
-//                                    body.Document.Body.Style = "zoom:100%;";
-                                    //body.Style = "zoom:100%;";
                                     ((System.Windows.Forms.HtmlDocument)doc).Window.ScrollTo((int)p.X, (int)p.Y);
 
                                     break;
@@ -142,11 +149,9 @@ namespace SessionPresent.Tools.SbnTools
                                 System.Threading.Thread.Sleep(1000);
 
                             }
-                            //System.Threading.Thread thread1 = new System.Threading.Thread(new System.Threading.ThreadStart(() => scrollto((int)p.X, (int)p.Y)));
-                            //thread1.Start();
-                            //thread1.Join();
 
                             break;
+                        
                         default:
                             break;
                     }
@@ -234,6 +239,17 @@ namespace SessionPresent.Tools.SbnTools
                         DocItemPosition.Text = new Point( Double.Parse( ((System.Windows.Forms.HtmlDocument) doc).Window.Document.Body.GetAttribute("ScrollLeft").ToString()), Double.Parse(((System.Windows.Forms.HtmlDocument) doc).Window.Document.Body.GetAttribute("ScrollTop"))).ToString();
 
                         metas.Add(DocItemPosition);
+
+                        var w = (mshtml.IHTMLWindow2)UcViewGovReportTabTemplate1.webBrowser1.Document.Window.DomWindow;
+                        var s = (mshtml.IHTMLScreen2)w.screen;
+                        int zoom = s.deviceXDPI * 100 / 96;
+
+                        var DocZoom = new BaseClass.ObjectMetaData();
+                        DocZoom.Tag = "DocItemZoomWebBrowser";
+                        DocZoom.Text = zoom.ToString();
+
+                        metas.Add(DocZoom);
+
                     }
                 }
                 catch
